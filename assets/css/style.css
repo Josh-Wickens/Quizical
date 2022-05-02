@@ -16,3 +16,17 @@ p {
     font-size: 150%;
     font-weight: 400;
 }
+
+#logo {
+    font-family: 'orelega one', cursive;
+    font-size: 200%;
+    right: 50%;
+    background-color: black;
+    height: auto;
+    width: 100%;
+    text-align: center;
+    color: whitesmoke;
+    text-shadow: 2px 2px 5px grey;
+    letter-spacing: 4px;
+    padding: 10px;
+}
