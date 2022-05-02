@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@600&family=Bebas+Neue&family=Kanit:wght@300&family=Orelega+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+body {
+    background: url(../images/quiz-background.png) no-repeat center center fixed;
+    background-size: cover;
+
+}
+
+p {
+    font-size: 150%;
+    font-weight: 400;
+}
