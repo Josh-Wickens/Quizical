@@ -1,10 +1,50 @@
+let startBtn = document.getElementById("begin");
+startBtn.addEventListener('click', startQuiz);
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("1st load");
+    quizLoaded();
+});
+
+function quizLoaded() {
+
+    console.log("hello world");
+
+}
+
 function startQuiz() {
+    let nContainer = document.getElementById("new-contain");
+    nContainer.style.display = "none";
+
+    let qContainer = document.getElementById("quiz-container");
+    qContainer.style.display = "block";
+
+
+}
+
+function showQuestion() {
 
 }
 
 function nextQuestion() {
 
 }
+
+function isAnswerCorrect() {
+
+}
+
+function incrementScore() {
+
+}
+
+function showResults() {
+
+}
+
+
 
 
 
