@@ -29,4 +29,19 @@ p {
     text-shadow: 2px 2px 5px grey;
     letter-spacing: 4px;
     padding: 10px;
+
+}
+
+#question-container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(12, 6, 6, 0.534);
+    color: whitesmoke;
+    width: 50vw;
+    height: 50vh;
+    justify-content: center;
+    align-items: center;
+    margin-left: 25%;
+    margin-top: 50px;
+
 }
