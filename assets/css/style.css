@@ -63,12 +63,30 @@ p {
     font-family: 'bebas neue', sans-serif;
     font-weight: 900;
     border: black 4px solid;
-    width: auto;
+    width: 200px;
     height: auto;
     font-size: 125%;
     padding: 10px;
+
 }
 
 .button:hover {
     background-color: green;
+}
+
+#under-game {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100vw;
+    margin-top: 20px;
+
+}
+
+#score-area {
+    padding: 15px;
+    background-color: rgba(12, 6, 6, 0.534);
+    color: whitesmoke;
+    display: none;
+    border: black 4px solid;
+
 }
