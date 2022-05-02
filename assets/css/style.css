@@ -43,5 +43,32 @@ p {
     align-items: center;
     margin-left: 25%;
     margin-top: 50px;
+    border: black 4px solid;
+    max-width: 80%;
 
+}
+
+#question {
+    font-size: 200%;
+    font-family: 'kanit', sans-serif;
+
+}
+
+#answer-btn-container {
+    display: grid;
+}
+
+.button {
+    margin: 10px 10px;
+    font-family: 'bebas neue', sans-serif;
+    font-weight: 900;
+    border: black 4px solid;
+    width: auto;
+    height: auto;
+    font-size: 125%;
+    padding: 10px;
+}
+
+.button:hover {
+    background-color: green;
 }
