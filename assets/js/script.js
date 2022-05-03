@@ -36,73 +36,73 @@ let questions = [{
 
     {
         id: 5,
-        question: "What does Harry give Dobby to free him?",
-        choiceA: "Sock",
-        choiceB: "Hat",
-        choiceC: "Wand",
+        question: "How many ingredients did the polyjuice potion have?",
+        choiceA: "7",
+        choiceB: "5",
+        choiceC: "9",
         answer: "a"
     },
 
     {
         id: 6,
-        question: "What does Harry give Dobby to free him?",
-        choiceA: "Sock",
-        choiceB: "Hat",
-        choiceC: "Wand",
-        answer: "a"
+        question: "What is the maximum speed that a firebolt broomstick can reach?",
+        choiceA: "100mph",
+        choiceB: "125mph",
+        choiceC: "150mph",
+        answer: "c"
     },
 
     {
         id: 7,
-        question: "What does Harry give Dobby to free him?",
-        choiceA: "Sock",
-        choiceB: "Hat",
-        choiceC: "Wand",
-        answer: "a"
+        question: "How many Horcruxes were made?",
+        choiceA: "7",
+        choiceB: "8",
+        choiceC: "9",
+        answer: "b"
     },
 
     {
         id: 8,
-        question: "What does Harry give Dobby to free him?",
-        choiceA: "Sock",
-        choiceB: "Hat",
-        choiceC: "Wand",
-        answer: "a"
+        question: "Hannah Abbott is sorted into which house?",
+        choiceA: "Ravenclaw",
+        choiceB: "Griffindor",
+        choiceC: "Hufflepuff",
+        answer: "c"
     },
 
     {
         id: 9,
-        question: "What does Harry give Dobby to free him?",
-        choiceA: "Sock",
-        choiceB: "Hat",
-        choiceC: "Wand",
-        answer: "a"
+        question: 'Who said, "The wand chooses the wizard, Mr. Potter."',
+        choiceA: "Hagrid",
+        choiceB: "Dubledore",
+        choiceC: "Ollivander",
+        answer: "c"
     },
 
     {
         id: 10,
-        question: "What does Harry give Dobby to free him?",
-        choiceA: "Sock",
-        choiceB: "Hat",
-        choiceC: "Wand",
-        answer: "a"
+        question: "For how many years did the Weasleys have Scabbers as a pet?",
+        choiceA: "10 years",
+        choiceB: "12 years",
+        choiceC: "14 years",
+        answer: "b"
     },
 
     {
         id: 11,
-        question: "What does Harry give Dobby to free him?",
-        choiceA: "Sock",
-        choiceB: "Hat",
-        choiceC: "Wand",
+        question: 'What magical act is the word "splinching" connected with?',
+        choiceA: "Apparition",
+        choiceB: "Levitation",
+        choiceC: "Divination",
         answer: "a"
     },
 
     {
         id: 12,
-        question: "What does Harry give Dobby to free him?",
-        choiceA: "Sock",
-        choiceB: "Hat",
-        choiceC: "Wand",
+        question: "What is Luna Lovegood's Patronus?",
+        choiceA: "A hare",
+        choiceB: "A badger",
+        choiceC: "A Squirrel",
         answer: "a"
     },
 
@@ -182,24 +182,23 @@ function startAgain() {
 
 function isAnswerCorrect(answer) {
     if (answer === questions[currentQuestion].answer) {
+        /* increase score by 1 if the user clicks the correct answer */
         score++;
         console.log("score is", score)
         correct();
     } else {
         alert("WRONG!");
     }
-    if (currentQuestion.length <= maxQuestions) {
+    if (currentQuestion <= maxQuestions) {
         /*move to next question in the array*/
         currentQuestion++;
         showQuestion();
     } else {
         endGame();
     }
-
-
 }
 
-/* function if the user selects the wrong answer */
+/* function if the user selects the right or wrong answer */
 
 function correct() {
     alert("Correct!")
@@ -211,11 +210,12 @@ function incorrect() {
 
 }
 
-function incrementScore() {
+/*function to end the quiz and show the results for that quiz */
 
-}
+
 
 function endGame() {
+    console.log("game ended");
     qContainer.style.display = "none";
     showResults();
 }
@@ -224,6 +224,8 @@ function showResults() {
     scoreCard.style.display = "flex";
 
 }
+
+/* function to shuffle the order of questions using fisher-yates algorithm */
 
 function shuffleQuestions() {
     let newPos, temp;
