@@ -34,11 +34,84 @@ let questions = [{
         answer: "a"
     },
 
+    {
+        id: 5,
+        question: "What does Harry give Dobby to free him?",
+        choiceA: "Sock",
+        choiceB: "Hat",
+        choiceC: "Wand",
+        answer: "a"
+    },
+
+    {
+        id: 6,
+        question: "What does Harry give Dobby to free him?",
+        choiceA: "Sock",
+        choiceB: "Hat",
+        choiceC: "Wand",
+        answer: "a"
+    },
+
+    {
+        id: 7,
+        question: "What does Harry give Dobby to free him?",
+        choiceA: "Sock",
+        choiceB: "Hat",
+        choiceC: "Wand",
+        answer: "a"
+    },
+
+    {
+        id: 8,
+        question: "What does Harry give Dobby to free him?",
+        choiceA: "Sock",
+        choiceB: "Hat",
+        choiceC: "Wand",
+        answer: "a"
+    },
+
+    {
+        id: 9,
+        question: "What does Harry give Dobby to free him?",
+        choiceA: "Sock",
+        choiceB: "Hat",
+        choiceC: "Wand",
+        answer: "a"
+    },
+
+    {
+        id: 10,
+        question: "What does Harry give Dobby to free him?",
+        choiceA: "Sock",
+        choiceB: "Hat",
+        choiceC: "Wand",
+        answer: "a"
+    },
+
+    {
+        id: 11,
+        question: "What does Harry give Dobby to free him?",
+        choiceA: "Sock",
+        choiceB: "Hat",
+        choiceC: "Wand",
+        answer: "a"
+    },
+
+    {
+        id: 12,
+        question: "What does Harry give Dobby to free him?",
+        choiceA: "Sock",
+        choiceB: "Hat",
+        choiceC: "Wand",
+        answer: "a"
+    },
+
 ]
 
 let nContainer = document.getElementById("start-contain");
 let qContainer = document.getElementById("quiz-container");
 let quizQuestion = document.getElementById("question");
+let scoreCard = document.getElementById("score-area");
 let optionA = document.getElementById("answer-a");
 let optionB = document.getElementById("answer-b");
 let optionC = document.getElementById("answer-c");
@@ -51,13 +124,7 @@ let score = 0;
 let availableQuestions = [];
 const maxQuestions = 10;
 
-/* timer variables
-const questionTime = 0;
-let clockContainer = document.getElementById("clock-contain");
-let clock = document.getElementById("timer-clock");
-let count = 15;
-let countDown = setInterval(timer, 1000);
-*/
+
 
 /* DOM loaded event listener and quiz loaded */
 
@@ -98,81 +165,36 @@ function showQuestion() {
     optionA.innerText = q.choiceA;
     optionB.innerText = q.choiceB;
     optionC.innerText = q.choiceC;
-    /*
-            let questionsIndex = Math.floor(Math.random() * availableQuestions.length);
-            currentQuestion = availableQuestions[questionsIndex];
-            quizQuestion.innerText = currentQuestion.question;
-            optionA.innerText = currentQuestion.choiceA;
-            optionB.innerText = currentQuestion.choiceB;
-            optionC.innerText = currentQuestion.choiceC;
-            availableQuestions.splice(questionsIndex, 1);
-            console.log(availableQuestions);
-        }
-    */
+
 
 }
-
-/* show the next question in the array after either answering an answer correct, incorrect or ran out of time */
-/*
-function nextQuestion() {
-
-    if (availableQuestions.length === 0) {
-        currentQuestion++;
-        showQuestion();
-        count = 0;
-        endGame();
-    };
-}
-*/
-
-/* function to for the timer. Will give the user 15 seconds to answer the question */
-/*
-function timer() {
-    if (count >= questionTime) {
-        clock.innerText = count;
-        count--;
-        console.log("count", count);
-    } else {
-        console.log("count", count);
-        count = 0;
-        incorrect();
-
-        clearInterval(countDown);
-
-        if (currentQuestion < availableQuestions) {
-            currentQuestion++;
-
-
-            showQuestion();
-        } else {
-
-            incorrect();
-        }
-    }
-}
-*/
-
 
 /* function for if the user clicks the start again button. Should restart the quiz from the beginning */
 
 function startAgain() {
     currentQuestion = 0;
     score = 0;
-    showQuestion();
+    startQuiz();
 
 }
 
 /* function to check if the user has selected the right answer */
 
 function isAnswerCorrect(answer) {
-    if (answer === currentQuestion.answer) {
+    if (answer === questions[currentQuestion].answer) {
         score++;
         console.log("score is", score)
         correct();
     } else {
         alert("WRONG!");
     }
-
+    if (currentQuestion.length <= maxQuestions) {
+        /*move to next question in the array*/
+        currentQuestion++;
+        showQuestion();
+    } else {
+        endGame();
+    }
 
 
 }
@@ -181,12 +203,12 @@ function isAnswerCorrect(answer) {
 
 function correct() {
     alert("Correct!")
-    nextQuestion();
+
 }
 
 function incorrect() {
     alert("ran out of time");
-    nextQuestion();
+
 }
 
 function incrementScore() {
@@ -194,10 +216,12 @@ function incrementScore() {
 }
 
 function endGame() {
-
+    qContainer.style.display = "none";
+    showResults();
 }
 
 function showResults() {
+    scoreCard.style.display = "flex";
 
 }
 
