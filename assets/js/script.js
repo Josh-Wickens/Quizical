@@ -82,7 +82,6 @@ function startQuiz() {
     nContainer.style.display = "none";
     qContainer.style.display = "block";
     scoreText = 0;
-    availableQuestions = [...questions];
     showQuestion();
 
 }
@@ -156,6 +155,8 @@ function timer() {
 /* function for if the user clicks the start again button. Should restart the quiz from the beginning */
 
 function startAgain() {
+    currentQuestion = 0;
+    score = 0;
     showQuestion();
 
 }
