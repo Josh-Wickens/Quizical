@@ -33,6 +33,7 @@ p {
 }
 
 #question-container {
+    text-align: center;
     display: flex;
     flex-direction: column;
     background-color: rgba(12, 6, 6, 0.534);
@@ -91,7 +92,7 @@ p {
 
 }
 
-#new-contain {
+#start-contain {
 
     position: absolute;
     top: 50%;

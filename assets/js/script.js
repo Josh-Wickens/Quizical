@@ -1,5 +1,7 @@
 let quizQuestion = document.getElementById("question");
-let options = document.getElementsByClassName("answer-buttons");
+let optionA = document.getElementById("answer-a");
+let optionB = document.getElementById("answer-b");
+let optionC = document.getElementById("answer-c");
 let scoreText = document.getElementById("score");
 let currentQuestion = {};
 let score = 0;
@@ -31,15 +33,13 @@ function quizLoaded() {
 
 function startQuiz() {
 
-    let nContainer = document.getElementById("new-contain");
+    let nContainer = document.getElementById("start-contain");
     nContainer.style.display = "none";
 
     let qContainer = document.getElementById("quiz-container");
     qContainer.style.display = "block";
 
-    let startAgainBtn = document.getElementById("start-again");
 
-    startAgainBtn.innerHTML = "Start Again";
 
     scoreText = 0;
     availableQuestions = [...questions];
@@ -68,11 +68,14 @@ function nextQuestion() {
 
     if (availableQuestions.length === 0) {
         endGame();
-    }
+    };
 
     let questionsIndex = Math.floor(Math.random() * availableQuestions.length);
-    currentQuestion = availableQuestions[questionsIndex]
-    question.innerText = currentQuestion.question
+    currentQuestion = availableQuestions[questionsIndex];
+    quizQuestion.innerText = currentQuestion.question;
+    optionA.innerText = currentQuestion.choiceA;
+    optionB.innerText = currentQuestion.choiceB;
+    optionC.innerText = currentQuestion.choiceC;
 
 }
 
@@ -110,45 +113,37 @@ function showResults() {
 let questions = [{
         id: 1,
         question: "What is the name of Harry Potters Father?",
-        answers: {
-            a: "John",
-            b: "James",
-            c: "Hargrid"
-        },
-        correctAswer: "b"
+        choiceA: "John",
+        choiceB: "James",
+        ChoiceC: "Hagrid",
+        correctAnswer: "b"
     },
 
     {
         id: 2,
         question: "What is Harry's favourite spell?",
-        answers: {
-            a: "Avadacadbra",
-            b: "Lumos",
-            c: "Expelliarmus"
-        },
-        correctAswer: "c"
+        choiceA: "Avadacadbra",
+        choiceB: "Lumos",
+        ChoiceC: "Expelliarmus",
+        correctAnswer: "c"
     },
 
     {
         id: 3,
         question: "What is the name Hermiones cat?",
-        answers: {
-            a: "Crookshank",
-            b: "Scabbers",
-            c: "Hedwig"
-        },
-        correctAswer: "a"
+        choiceA: "Crookshank",
+        choiceB: "Scabbers",
+        choiceC: "Hedwig",
+        correctAnswer: "a"
     },
 
     {
         id: 4,
         question: "What does Harry give Dobby to free him?",
-        answers: {
-            a: "Sock",
-            b: "Hat",
-            c: "Wand"
-        },
-        correctAswer: "a"
+        choiceA: "Sock",
+        choiceB: "Hat",
+        choiceC: "Wand",
+        correctAnswer: "a"
     },
 
 ]
