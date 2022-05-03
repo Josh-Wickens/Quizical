@@ -1,5 +1,5 @@
 let questions = [{
-
+        id: 1,
         question: "What is the name of Harry Potters Father?",
         choiceA: "John",
         choiceB: "James",
@@ -8,7 +8,7 @@ let questions = [{
     },
 
     {
-
+        id: 2,
         question: "What is Harry's favourite spell?",
         choiceA: "Avadacadbra",
         choiceB: "Lumos",
@@ -17,7 +17,7 @@ let questions = [{
     },
 
     {
-
+        id: 3,
         question: "What is the name Hermiones cat?",
         choiceA: "Crookshank",
         choiceB: "Scabbers",
@@ -26,7 +26,7 @@ let questions = [{
     },
 
     {
-
+        id: 4,
         question: "What does Harry give Dobby to free him?",
         choiceA: "Sock",
         choiceB: "Hat",
@@ -82,6 +82,7 @@ function startQuiz() {
     nContainer.style.display = "none";
     qContainer.style.display = "block";
     scoreText = 0;
+    shuffleQuestions();
     showQuestion();
 
 }
@@ -198,4 +199,15 @@ function endGame() {
 
 function showResults() {
 
+}
+
+function shuffleQuestions() {
+    let newPos, temp;
+    for (let i = questions.length - 1; i > 0; i--) {
+        newPos = Math.floor(Math.random() * (i + 1));
+        temp = questions[i];
+        questions[i] = questions[newPos];
+        questions[newPos] = temp;
+    }
+    return questions;
 }
