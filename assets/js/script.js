@@ -1,7 +1,22 @@
+let quizQuestion = document.getElementById("question");
+let options = document.getElementsByClassName("answer-buttons");
+let scoreText = document.getElementById("score");
+let currentQuestion = {};
+let score = 0;
+let availableQuestions = [];
+let maxQuestions = 10;
+
+
+
+
+
+
+
+
+
+
 let startBtn = document.getElementById("begin");
 startBtn.addEventListener('click', startQuiz);
-
-
 
 document.addEventListener("DOMContentLoaded", function () {
     console.log("1st load");
@@ -15,41 +30,49 @@ function quizLoaded() {
 }
 
 function startQuiz() {
+
     let nContainer = document.getElementById("new-contain");
     nContainer.style.display = "none";
 
     let qContainer = document.getElementById("quiz-container");
     qContainer.style.display = "block";
 
-    showQuestion();
+    let startAgainBtn = document.getElementById("start-again");
 
+    startAgainBtn.innerHTML = "Start Again";
+
+    scoreText = 0;
+    availableQuestions = [...questions];
+
+    showQuestion();
 
 }
 
 function showQuestion(q) {
 
-    console.log("showing question");
     let aQuestion = document.getElementById("question");
-
 
 
     aQuestion.innerText = questions[0].question;
 
     showQuestion(questions);
 
+
 }
 
-
+/* save function for later
+let chosenAnswer = document.getElementsByClassName("answer-buttons");
+chosenAnswer.addEventListener('click', isAnswerCorrect);
 
 function nextQuestion() {
 
 }
 
 function isAnswerCorrect() {
-
+    console.log("check answer")
 
 }
-
+*/
 function incrementScore() {
 
 }
