@@ -113,3 +113,14 @@ p {
 #quiz-container {
     display: none;
 }
+
+#clock-contain {
+    font-size: 125%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    font-family: 'arimo', sans-serif;
+    height: auto;
+    color: black;
+    width: auto;
+}

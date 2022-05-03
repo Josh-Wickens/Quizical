@@ -10,7 +10,15 @@ let startBtn = document.getElementById("begin");
 let currentQuestion = {};
 let score = 0;
 let availableQuestions = [];
-let maxQuestions = 10;
+const maxQuestions = 10;
+const questionTime = 15;
+let clockContainer = document.getElementById("clock-contain");
+let clock = document.getElementById("timer-clock");
+let count = 0;
+
+
+
+
 
 
 
@@ -40,26 +48,14 @@ function startQuiz() {
 
 
 
+
+
     scoreText = 0;
     availableQuestions = [...questions];
 
     showQuestion();
 
 }
-/*
-
-function showQuestion(q) {
-
-    let aQuestion = document.getElementById("question");
-
-
-    aQuestion.innerText = questions[0].question;
-
-    showQuestion(questions);
-
-
-}
-*/
 
 function showQuestion() {
     let questionsIndex = Math.floor(Math.random() * availableQuestions.length);
@@ -68,25 +64,55 @@ function showQuestion() {
     optionA.innerText = currentQuestion.choiceA;
     optionB.innerText = currentQuestion.choiceB;
     optionC.innerText = currentQuestion.choiceC;
+    availableQuestions.splice(questionsIndex, 1);
+    console.log(questions);
 }
 
 
 function nextQuestion() {
 
     if (availableQuestions.length === 0) {
+        currentQuestion++;
+        showQuestion();
         endGame();
     };
 
-
-
 }
+
+function timer() {
+    if (count <= questionTime) {
+        clock.innerText = count;
+        count++;
+
+    } else {
+        count = 0;
+        answerIsWrong();
+
+        if (currentQuestion < availableQuestions) {
+            currentQuestion++;
+            showQuestion();
+        } else {
+            clearInterval(timer);
+            incorrect();
+        }
+    }
+}
+
+let countDown = setInterval(timer, 1000);
+
+
 
 function startAgain() {
     showQuestion();
+    timer();
 }
 
 function isAnswerCorrect() {
 
+
+}
+
+function incorrect() {
 
 }
 
