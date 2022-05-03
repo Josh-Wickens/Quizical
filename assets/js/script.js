@@ -44,9 +44,10 @@ function startQuiz() {
     scoreText = 0;
     availableQuestions = [...questions];
 
-    showQuestion();
+    nextQuestion();
 
 }
+/*
 
 function showQuestion(q) {
 
@@ -59,21 +60,32 @@ function showQuestion(q) {
 
 
 }
+*/
 
-/* save function for later
-let chosenAnswer = document.getElementsByClassName("answer-buttons");
-chosenAnswer.addEventListener('click', isAnswerCorrect);
+
 
 function nextQuestion() {
+
+    if (availableQuestions.length === 0) {
+        endGame();
+    }
+
+    let questionsIndex = Math.floor(Math.random() * availableQuestions.length);
+    currentQuestion = availableQuestions[questionsIndex]
+    question.innerText = currentQuestion.question
 
 }
 
 function isAnswerCorrect() {
-    console.log("check answer")
+
 
 }
-*/
+
 function incrementScore() {
+
+}
+
+function endGame() {
 
 }
 
