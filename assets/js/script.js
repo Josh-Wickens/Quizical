@@ -1,8 +1,12 @@
+let nContainer = document.getElementById("start-contain");
+let qContainer = document.getElementById("quiz-container");
 let quizQuestion = document.getElementById("question");
 let optionA = document.getElementById("answer-a");
 let optionB = document.getElementById("answer-b");
 let optionC = document.getElementById("answer-c");
 let scoreText = document.getElementById("score");
+let startAgainButton = document.getElementById("start-again");
+let startBtn = document.getElementById("begin");
 let currentQuestion = {};
 let score = 0;
 let availableQuestions = [];
@@ -10,15 +14,10 @@ let maxQuestions = 10;
 
 
 
-
-
-
-
-
-
-
-let startBtn = document.getElementById("begin");
+startAgainButton.addEventListener('click', startAgain);
 startBtn.addEventListener('click', startQuiz);
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
     console.log("1st load");
@@ -26,17 +25,17 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function quizLoaded() {
-
+    nContainer.style.display = "flex";
     console.log("hello world");
 
 }
 
 function startQuiz() {
 
-    let nContainer = document.getElementById("start-contain");
+
     nContainer.style.display = "none";
 
-    let qContainer = document.getElementById("quiz-container");
+
     qContainer.style.display = "block";
 
 
@@ -44,7 +43,7 @@ function startQuiz() {
     scoreText = 0;
     availableQuestions = [...questions];
 
-    nextQuestion();
+    showQuestion();
 
 }
 /*
@@ -62,6 +61,14 @@ function showQuestion(q) {
 }
 */
 
+function showQuestion() {
+    let questionsIndex = Math.floor(Math.random() * availableQuestions.length);
+    currentQuestion = availableQuestions[questionsIndex];
+    quizQuestion.innerText = currentQuestion.question;
+    optionA.innerText = currentQuestion.choiceA;
+    optionB.innerText = currentQuestion.choiceB;
+    optionC.innerText = currentQuestion.choiceC;
+}
 
 
 function nextQuestion() {
@@ -70,13 +77,12 @@ function nextQuestion() {
         endGame();
     };
 
-    let questionsIndex = Math.floor(Math.random() * availableQuestions.length);
-    currentQuestion = availableQuestions[questionsIndex];
-    quizQuestion.innerText = currentQuestion.question;
-    optionA.innerText = currentQuestion.choiceA;
-    optionB.innerText = currentQuestion.choiceB;
-    optionC.innerText = currentQuestion.choiceC;
 
+
+}
+
+function startAgain() {
+    showQuestion();
 }
 
 function isAnswerCorrect() {
@@ -115,7 +121,7 @@ let questions = [{
         question: "What is the name of Harry Potters Father?",
         choiceA: "John",
         choiceB: "James",
-        ChoiceC: "Hagrid",
+        choiceC: "Hagrid",
         correctAnswer: "b"
     },
 
@@ -124,7 +130,7 @@ let questions = [{
         question: "What is Harry's favourite spell?",
         choiceA: "Avadacadbra",
         choiceB: "Lumos",
-        ChoiceC: "Expelliarmus",
+        choiceC: "Expelliarmus",
         correctAnswer: "c"
     },
 
