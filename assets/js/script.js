@@ -21,18 +21,32 @@ function startQuiz() {
     let qContainer = document.getElementById("quiz-container");
     qContainer.style.display = "block";
 
+    showQuestion();
+
 
 }
 
-function showQuestion() {
+function showQuestion(q) {
+
+    console.log("showing question");
+    let aQuestion = document.getElementById("question");
+
+
+
+    aQuestion.innerText = questions[0].question;
+
+    showQuestion(questions);
 
 }
+
+
 
 function nextQuestion() {
 
 }
 
 function isAnswerCorrect() {
+
 
 }
 
@@ -59,6 +73,7 @@ function showResults() {
 
 
 let questions = [{
+        id: 1,
         question: "What is the name of Harry Potters Father?",
         answers: {
             a: "John",
@@ -69,6 +84,7 @@ let questions = [{
     },
 
     {
+        id: 2,
         question: "What is Harry's favourite spell?",
         answers: {
             a: "Avadacadbra",
@@ -79,6 +95,7 @@ let questions = [{
     },
 
     {
+        id: 3,
         question: "What is the name Hermiones cat?",
         answers: {
             a: "Crookshank",
@@ -89,6 +106,7 @@ let questions = [{
     },
 
     {
+        id: 4,
         question: "What does Harry give Dobby to free him?",
         answers: {
             a: "Sock",
