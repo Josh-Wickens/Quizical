@@ -11,18 +11,14 @@ let currentQuestion = {};
 let score = 0;
 let availableQuestions = [];
 const maxQuestions = 10;
-const questionTime = 15;
+const questionTime = 0;
 let clockContainer = document.getElementById("clock-contain");
 let clock = document.getElementById("timer-clock");
-let count = 0;
+let count = 15;
 let countDown = setInterval(timer, 1000);
 
 
-
-
-
-
-
+/* DOM loaded event listener and quiz loaded */
 
 startAgainButton.addEventListener('click', startAgain);
 startBtn.addEventListener('click', startQuiz);
@@ -38,6 +34,8 @@ function quizLoaded() {
 
 }
 
+/* Start quiz function */
+
 function startQuiz() {
 
     nContainer.style.display = "none";
@@ -46,10 +44,12 @@ function startQuiz() {
     availableQuestions = [...questions];
     showQuestion();
 
-
 }
 
-function showQuestion() {
+/* show question function to pick a random question from the array of questions */
+
+
+function showQuestion(q) {
     let questionsIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionsIndex];
     quizQuestion.innerText = currentQuestion.question;
@@ -62,6 +62,7 @@ function showQuestion() {
 
 }
 
+/* show the next question in the array after either answering an answer correct, incorrect or ran out of time */
 
 function nextQuestion() {
 
@@ -75,14 +76,16 @@ function nextQuestion() {
 
 }
 
+/* function to for the timer. Will give the user 15 seconds to answer the question */
+
 function timer() {
-    if (count <= questionTime) {
+    if (count >= questionTime) {
         clock.innerText = count;
-        count++;
+        count--;
 
     } else {
         count = 0;
-        answerIsWrong();
+        incorrect();
 
         if (currentQuestion < availableQuestions) {
             currentQuestion++;
@@ -96,15 +99,18 @@ function timer() {
 
 
 
-
+/* function for if the user clicks the start again button. Should restart the quiz from the beginning */
 
 function startAgain() {
     showQuestion();
+    timer();
 
 }
 
+/* function to check if the user has selected the right answer */
+
 function isAnswerCorrect(answer) {
-    if (answer == questions[currentQuestion].correctAnswer) {
+    if (answer === questions[currentQuestion].correctAnswer) {
         score++;
     } else {
         alert("WRONG!");
@@ -113,7 +119,10 @@ function isAnswerCorrect(answer) {
 
 }
 
+/* function if the user selects the wrong answer */
+
 function incorrect() {
+    /* alert("ran out of time"); */
 
 }
 
