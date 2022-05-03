@@ -15,6 +15,8 @@ const questionTime = 15;
 let clockContainer = document.getElementById("clock-contain");
 let clock = document.getElementById("timer-clock");
 let count = 0;
+let countDown = setInterval(timer, 1000);
+
 
 
 
@@ -24,13 +26,11 @@ let count = 0;
 
 startAgainButton.addEventListener('click', startAgain);
 startBtn.addEventListener('click', startQuiz);
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
     console.log("1st load");
     quizLoaded();
 });
+
 
 function quizLoaded() {
     nContainer.style.display = "flex";
@@ -40,20 +40,12 @@ function quizLoaded() {
 
 function startQuiz() {
 
-
     nContainer.style.display = "none";
-
-
     qContainer.style.display = "block";
-
-
-
-
-
     scoreText = 0;
     availableQuestions = [...questions];
-
     showQuestion();
+
 
 }
 
@@ -66,6 +58,8 @@ function showQuestion() {
     optionC.innerText = currentQuestion.choiceC;
     availableQuestions.splice(questionsIndex, 1);
     console.log(questions);
+    timer();
+
 }
 
 
@@ -74,6 +68,8 @@ function nextQuestion() {
     if (availableQuestions.length === 0) {
         currentQuestion++;
         showQuestion();
+        count = 0;
+        timer();
         endGame();
     };
 
@@ -98,16 +94,21 @@ function timer() {
     }
 }
 
-let countDown = setInterval(timer, 1000);
+
 
 
 
 function startAgain() {
     showQuestion();
-    timer();
+
 }
 
-function isAnswerCorrect() {
+function isAnswerCorrect(answer) {
+    if (answer == questions[currentQuestion].correctAnswer) {
+        score++;
+    } else {
+        alert("WRONG!");
+    }
 
 
 }
