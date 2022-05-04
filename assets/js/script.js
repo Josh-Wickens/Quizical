@@ -179,7 +179,7 @@ function openModal(modal) {
 }
 
 function closeModal() {
-    if (modal == null || userName === "") {
+    if (modal == null || userName.value === "") {
 
         alert("Please insert a name");
     } else {
