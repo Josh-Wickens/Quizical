@@ -106,7 +106,7 @@ const questions = [{
         answer: "a"
     },
 
-]
+];
 
 const nContainer = document.getElementById("start-contain");
 const qContainer = document.getElementById("quiz-container");
@@ -117,13 +117,10 @@ let optionA = document.getElementById("answer-a");
 let optionB = document.getElementById("answer-b");
 let optionC = document.getElementById("answer-c");
 let scoreText = document.getElementById("score");
-console.log(scoreText)
 const startAgainButton = document.getElementById("start-again");
 const startBtn = document.getElementById("begin");
 let currentQuestion = 0;
-let lastQuestion = questions.length - 1;
 let score = 0;
-let availableQuestions = [];
 const maxQuestions = 10;
 
 
@@ -181,6 +178,8 @@ function startAgain() {
         scoreCard.display = "none";
         questionsContainer.display = "flex";
         startQuiz();
+    } else {
+        startQuiz();
     }
 
 
@@ -200,7 +199,7 @@ function isAnswerCorrect(answer) {
     }
     currentQuestion++;
     showQuestion();
-    
+
     if (currentQuestion >= maxQuestions) {
         endGame();
     }
