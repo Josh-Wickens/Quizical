@@ -121,7 +121,33 @@ const startAgainButton = document.getElementById("start-again");
 const startBtn = document.getElementById("begin");
 let currentQuestion = 0;
 let score = 0;
-const maxQuestions = 10;
+
+/* Modal variables */
+const openModal = document.getElementsByClassName("modal-start");
+const closeModal = document.getElementById("submit");
+const overlay = document.getElementById("overlay");
+
+/* Modal Event Listeners */
+
+openModal.addEventListener('click', openTheModal);
+closeModal.addEventListener('click', closeTheModal);
+
+
+/* Modal Function */
+
+function openTheModal() {
+    console.log("open Modal Function")
+    if (modal === null) return;
+    modal.classlist.add('active');
+    overlay.classlist.add('active');
+}
+
+function closeTheModal() {
+    if (modal === null) return;
+    modal.classlist.remove('active');
+    overlay.classlist.remove('active');
+}
+
 
 
 
