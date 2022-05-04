@@ -1,4 +1,4 @@
-let questions = [{
+const questions = [{
         id: 1,
         question: "What is the name of Harry Potters Father?",
         choiceA: "John",
@@ -108,18 +108,19 @@ let questions = [{
 
 ]
 
-let nContainer = document.getElementById("start-contain");
-let qContainer = document.getElementById("quiz-container");
-let quizQuestion = document.getElementById("question");
-let scoreCard = document.getElementById("score-area");
+const nContainer = document.getElementById("start-contain");
+const qContainer = document.getElementById("quiz-container");
+const questionsContainer = document.getElementById('question-container');
+const quizQuestion = document.getElementById("question");
+const scoreCard = document.getElementById("score-area");
 let optionA = document.getElementById("answer-a");
 let optionB = document.getElementById("answer-b");
 let optionC = document.getElementById("answer-c");
 let scoreText = document.getElementById("score");
-let startAgainButton = document.getElementById("start-again");
-let startBtn = document.getElementById("begin");
+const startAgainButton = document.getElementById("start-again");
+const startBtn = document.getElementById("begin");
 let currentQuestion = 0;
-const lastQuestion = questions.length - 1;
+let lastQuestion = questions.length - 1;
 let score = 0;
 let availableQuestions = [];
 const maxQuestions = 10;
@@ -216,12 +217,19 @@ function incorrect() {
 
 function endGame() {
     console.log("game ended");
-    qContainer.style.display = "none";
+    questionsContainer.style.display = "none";
     showResults();
+    console.log(questions);
+    return score;
+
 }
 
 function showResults() {
+
+    console.log("score should be revealed")
     scoreCard.style.display = "flex";
+    scoreText.innerText += `${score} out of 10`;
+    startAgainButton.innerText = "TRY AGAIN?";
 
 }
 
