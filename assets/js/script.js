@@ -122,6 +122,7 @@ const startBtn = document.getElementById("begin");
 let currentQuestion = 0;
 let score = 0;
 const maxQuestions = 10;
+let userName = document.getElementById("name");
 
 /* Modal variables */
 const openModalBtn = document.querySelectorAll('[data-modal-target]');
@@ -178,10 +179,14 @@ function openModal(modal) {
 }
 
 function closeModal() {
-    if (modal == null) return
-    modal.classList.remove('active');
-    overlay.classList.remove('active');
-    startQuiz();
+    if (modal == null || userName === "") {
+
+        alert("Please insert a name");
+    } else {
+        modal.classList.remove('active');
+        overlay.classList.remove('active');
+        startQuiz();
+    }
 }
 
 
