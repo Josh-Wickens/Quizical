@@ -21,25 +21,34 @@
     <div id="logo">
         <h1>Quizical</h1>
     </div>
+
+    <!--This is the modal, it will appear once the player presses the start button and will make the user submit a name-->
     <div class="modal" id="modal">
         <div id="modal-header">
             You will be asked 10 questions. Select your answer and find out your score at the end of the quiz!
         </div>
         <div id="name-input">
             <label for="name">insert name</label>
-            <input type="text" placeholder='"Quiz Master"' name="name" required class="input-text">
-            <button type="submit" class="button" id="submit" data-submit-button>Submit</button>
+            <input type="text" placeholder='"Quiz Master"' name="name" class="input-text" required>
+            <button type="submit" class="button" id="submit" data-close-button Submit>Submit</button>
         </div>
     </div>
+
+    <!--Start contain holds the opening page elements. This will be hidden once the player starts the game-->
     <div id="start-contain">
+
+
         <button class="button modal-start" id="begin" data-modal-target="#modal">Start</button>
     </div>
+
+    <!--Quiz container holds the quiz elements. This will appear once the user has submiited a name-->
     <div id="quiz-container">
 
         <div id="clock-contain">
             <p><span id="timer-clock"></span></p>
         </div>
 
+        <!-- The  Question container holds the quiz questions and answer buttons-->
         <div id="question-container">
             <div id="question">Question</div>
             <div id="answer-btn-container">
@@ -48,6 +57,8 @@
                 <button class="button" id="choice-c" onclick="isAnswerCorrect('c')"><span id="answer-c"></span></button>
             </div>
         </div>
+
+        <!-- Under game holds the start again button, the score board and the high scores-->
         <div id="under-game">
             <div id="controls-area">
                 <button class="button" id="start-again">Start Again</button>
@@ -57,6 +68,8 @@
             </div>
         </div>
     </div>
+
+    <!--The overlay will hold the entire screen and provide a backdrop for the modal-->
     <div id="overlay"></div>
 
 

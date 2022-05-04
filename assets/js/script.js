@@ -121,37 +121,34 @@ const startAgainButton = document.getElementById("start-again");
 const startBtn = document.getElementById("begin");
 let currentQuestion = 0;
 let score = 0;
+const maxQuestions = 10;
 
 /* Modal variables */
-const openModal = document.getElementsByClassName("modal-start");
-const closeModal = document.getElementById("submit");
+const openModalBtn = document.querySelectorAll('[data-modal-target]');
+const closeModalBtn = document.querySelectorAll('[data-close-button]');
 const overlay = document.getElementById("overlay");
 
-/* Modal Event Listeners */
-
-openModal.addEventListener('click', openTheModal);
-closeModal.addEventListener('click', closeTheModal);
-
-
-/* Modal Function */
-
-function openTheModal() {
-    console.log("open Modal Function")
-    if (modal === null) return;
-    modal.classlist.add('active');
-    overlay.classlist.add('active');
-}
-
-function closeTheModal() {
-    if (modal === null) return;
-    modal.classlist.remove('active');
-    overlay.classlist.remove('active');
-}
 
 
 
 
 /* DOM loaded event listener and quiz loaded */
+
+openModalBtn.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = document.querySelector(button.dataset.modalTarget);
+        openModal(modal);
+    })
+})
+
+closeModalBtn.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = button.closest(".modal")
+        closeModal(modal);
+    })
+})
+
+
 
 startAgainButton.addEventListener('click', startAgain);
 startBtn.addEventListener('click', startQuiz);
@@ -166,6 +163,28 @@ function quizLoaded() {
     console.log("hello world");
 
 }
+
+/* Modal Event Listeners */
+
+
+
+
+/* Modal Function */
+
+function openModal(modal) {
+    if (modal == null) return;
+    modal.classList.add('active');
+    overlay.classList.add('active');
+}
+
+function closeModal() {
+    if (modal == null) return
+    modal.classList.remove('active');
+    overlay.classList.remove('active');
+    startQuiz();
+}
+
+
 
 /* Start quiz function */
 
