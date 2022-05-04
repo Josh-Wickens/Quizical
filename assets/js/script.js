@@ -112,7 +112,7 @@ const nContainer = document.getElementById("start-contain");
 const qContainer = document.getElementById("quiz-container");
 const questionsContainer = document.getElementById('question-container');
 const quizQuestion = document.getElementById("question");
-const scoreCard = document.getElementById("score-area");
+let scoreCard = document.getElementById("score-area");
 let optionA = document.getElementById("answer-a");
 let optionB = document.getElementById("answer-b");
 let optionC = document.getElementById("answer-c");
@@ -173,11 +173,18 @@ function showQuestion() {
 /* function for if the user clicks the start again button. Should restart the quiz from the beginning */
 
 function startAgain() {
-    currentQuestion = 0;
+    currentQuestion = [0];
     score = 0;
-    startQuiz();
+
+    if (questionsContainer.display === "none") {
+        scoreCard.display = "none";
+        questionsContainer.display = "flex";
+        startQuiz();
+    }
+
 
 }
+
 
 /* function to check if the user has selected the right answer */
 
@@ -190,14 +197,17 @@ function isAnswerCorrect(answer) {
     } else {
         alert("WRONG!");
     }
-    if (currentQuestion <= maxQuestions) {
-        /*move to next question in the array*/
+    do {
         currentQuestion++;
         showQuestion();
-    } else {
-        endGame();
     }
+    while (currentQuestion[questions] <= maxQuestions);
+
+    /*move to next question in the array*/
+
+    endGame();
 }
+
 
 /* function if the user selects the right or wrong answer */
 
@@ -224,11 +234,15 @@ function endGame() {
 
 }
 
+function scoreAmount(scores) {
+    score.toString;
+}
+
 function showResults() {
 
     console.log("score should be revealed")
     scoreCard.style.display = "flex";
-    scoreText.innerText += `${score} out of 10`;
+    scoreText.innerHTML = score.toString, "out of 10";
     startAgainButton.innerText = "TRY AGAIN?";
 
 }
