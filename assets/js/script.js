@@ -117,6 +117,7 @@ let optionA = document.getElementById("answer-a");
 let optionB = document.getElementById("answer-b");
 let optionC = document.getElementById("answer-c");
 let scoreText = document.getElementById("score");
+console.log(scoreText)
 const startAgainButton = document.getElementById("start-again");
 const startBtn = document.getElementById("begin");
 let currentQuestion = 0;
@@ -197,15 +198,15 @@ function isAnswerCorrect(answer) {
     } else {
         alert("WRONG!");
     }
-    do {
-        currentQuestion++;
-        showQuestion();
+    currentQuestion++;
+    showQuestion();
+    
+    if (currentQuestion >= maxQuestions) {
+        endGame();
     }
-    while (currentQuestion[questions] <= maxQuestions);
 
     /*move to next question in the array*/
 
-    endGame();
 }
 
 
@@ -234,15 +235,12 @@ function endGame() {
 
 }
 
-function scoreAmount(scores) {
-    score.toString;
-}
 
 function showResults() {
 
     console.log("score should be revealed")
     scoreCard.style.display = "flex";
-    scoreText.innerHTML = score.toString, "out of 10";
+    document.getElementById('score').innerText = `${score} out of 10`;
     startAgainButton.innerText = "TRY AGAIN?";
 
 }
