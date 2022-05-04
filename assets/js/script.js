@@ -117,7 +117,7 @@ let optionA = document.getElementById("answer-a");
 let optionB = document.getElementById("answer-b");
 let optionC = document.getElementById("answer-c");
 let scoreText = document.getElementById("score");
-const startAgainButton = document.getElementById("start-again");
+
 const startBtn = document.getElementById("begin");
 let currentQuestion = 0;
 let score = 0;
@@ -150,7 +150,7 @@ closeModalBtn.forEach(button => {
 })
 
 
-
+let startAgainButton = document.getElementById("start-again");
 startAgainButton.addEventListener('click', startAgain);
 startBtn.addEventListener('click', startQuiz);
 document.addEventListener("DOMContentLoaded", function () {
@@ -223,14 +223,12 @@ function showQuestion() {
 function startAgain() {
     currentQuestion = [0];
     score = 0;
+    console.log("start again clicked")
+    questionsContainer.style.display = "flex";
+    scoreCard.style.display = "none";
+    startQuiz();
 
-    if (questionsContainer.display === "none") {
-        scoreCard.display = "none";
-        questionsContainer.display = "flex";
-        startQuiz();
-    } else {
-        startQuiz();
-    }
+
 
 
 }
