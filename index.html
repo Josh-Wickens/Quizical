@@ -25,12 +25,23 @@
     <!--This is the modal, it will appear once the player presses the start button and will make the user submit a name-->
     <div class="modal" id="modal">
         <div id="modal-header">
-            You will be asked 10 questions. Select your answer and find out your score at the end of the quiz!
+            Insert a Name and Select a game type. Quick game is 10 questions and see how many you can get right. Timed
+            game will give you
+            60 seconds to answer as many answers right as you can!
         </div>
         <div id="name-input">
             <label for="name">insert name</label>
             <input type="text" placeholder='"Quiz Master"' name="name" class="input-text" id="name" required>
             <button type="submit" class="button" id="submit" data-close-button Submit>Submit</button>
+            <div id="game-type">
+                <div><input type="radio" name="which-game" value="quick" data-type="quick-game" id="quick-button"
+                        checked><label for="quick-game">Quick
+                        Game</label></div>
+                <div><input type="radio" name="which-game" value="timed" data-type="timed-game" id="time-game"><label
+                        for="timed-game">Timed
+                        Game</label></div>
+
+            </div>
         </div>
     </div>
 
