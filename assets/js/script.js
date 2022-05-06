@@ -124,13 +124,23 @@ let score = 0;
 const maxQuestions = 10;
 let userName = document.getElementById("name");
 
+/* Timer Variables */
+
+const questionTime = 0;
+let clockContainer = document.getElementById("clock-contain");
+let clock = document.getElementById("timer-clock");
+let count = 60;
+let countDown = setInterval(timer, 1000);
+
 /* Modal variables */
 const openModalBtn = document.querySelectorAll('[data-modal-target]');
 const closeModalBtn = document.querySelectorAll('[data-close-button]');
 const overlay = document.getElementById("overlay");
 
 
-
+/* event listener to get radio selection */
+let gameChoice =
+    document.addEventListener
 
 
 /* DOM loaded event listener and quiz loaded */
@@ -200,6 +210,10 @@ function startQuiz() {
     scoreText = 0;
     shuffleQuestions();
     showQuestion();
+
+    if (gameType === value.timed) {
+        timer();
+    }
 
 }
 
@@ -303,4 +317,22 @@ function shuffleQuestions() {
         questions[newPos] = temp;
     }
     return questions;
+}
+
+
+
+/* timer */
+
+
+function timer() {
+    count--;
+    clock.innerText = count;
+    console.log("count", count);
+    if (count === 0) {
+        endGame();
+
+
+
+
+    }
 }
