@@ -32,16 +32,8 @@
         <div id="name-input">
             <label for="name">insert name</label>
             <input type="text" placeholder='"Quiz Master"' name="name" class="input-text" id="name" required>
-            <button type="submit" class="button" id="submit" data-close-button Submit>Submit</button>
-            <div id="game-type">
-                <div><input type="radio" name="which-game" value="quick" data-type="quick-game" id="quick-button"
-                        checked><label for="quick-game">Quick
-                        Game</label></div>
-                <div><input type="radio" name="which-game" value="timed" data-type="timed-game" id="time-game"><label
-                        for="timed-game">Timed
-                        Game</label></div>
-
-            </div>
+            <button type="submit" class="button" id="submit-normal" data-close-button Submit>Start Normal Game</button>
+            <button type="submit" class="button" id="submit-timed" data-close-button Submit>Start Timed Game</button>
         </div>
     </div>
 
@@ -63,9 +55,9 @@
         <div id="question-container">
             <div id="question">Question</div>
             <div id="answer-btn-container">
-                <button class="button" id="choice-a" onclick="isAnswerCorrect('a')"><span id="answer-a"></span></button>
-                <button class="button" id="choice-b" onclick="isAnswerCorrect('b')"><span id="answer-b"></span></button>
-                <button class="button" id="choice-c" onclick="isAnswerCorrect('c')"><span id="answer-c"></span></button>
+                <button class="button game-button" id="choice-a" data-answer="a"><span id="answer-a"></span></button>
+                <button class="button game-button" id="choice-b" data-answer="b"><span id="answer-b"></span></button>
+                <button class="button game-button" id="choice-c" data-answer="c"><span id="answer-c"></span></button>
             </div>
         </div>
 

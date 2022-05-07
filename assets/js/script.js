@@ -123,24 +123,20 @@ let currentQuestion = 0;
 let score = 0;
 const maxQuestions = 10;
 let userName = document.getElementById("name");
+let gameBtns = Array.from(document.getElementsByClassName('game-button'))
 
 /* Timer Variables */
 
 const questionTime = 0;
 let clockContainer = document.getElementById("clock-contain");
 let clock = document.getElementById("timer-clock");
-let count = 60;
-let countDown = setInterval(timer, 1000);
+let count = 10;
+
 
 /* Modal variables */
 const openModalBtn = document.querySelectorAll('[data-modal-target]');
 const closeModalBtn = document.querySelectorAll('[data-close-button]');
 const overlay = document.getElementById("overlay");
-
-
-/* event listener to get radio selection */
-let gameChoice =
-    document.addEventListener
 
 
 /* DOM loaded event listener and quiz loaded */
@@ -159,10 +155,16 @@ closeModalBtn.forEach(button => {
     })
 })
 
-
+let startNormal = document.getElementById("submit-normal");
+let timedGame = document.getElementById('submit-timed')
 let startAgainButton = document.getElementById("start-again");
 startAgainButton.addEventListener('click', startAgain);
-startBtn.addEventListener('click', startQuiz);
+startNormal.addEventListener('click', function () {
+    startQuiz('normal')
+}, false);
+timedGame.addEventListener('click', function () {
+    startQuiz('timed')
+}, false);
 document.addEventListener("DOMContentLoaded", function () {
     console.log("1st load");
     quizLoaded();
@@ -176,9 +178,6 @@ function quizLoaded() {
 }
 
 /* Modal Event Listeners */
-
-
-
 
 /* Modal Function */
 
@@ -195,27 +194,66 @@ function closeModal() {
     } else {
         modal.classList.remove('active');
         overlay.classList.remove('active');
-        startQuiz();
     }
+    nContainer.style.display = "none";
+    qContainer.style.display = "block";
 }
 
 
 
 /* Start quiz function */
 
-function startQuiz() {
+let radios = document.querySelectorAll('input[type=radio]');
 
-    nContainer.style.display = "none";
-    qContainer.style.display = "block";
+function startQuiz(type) {
+
+
     scoreText = 0;
     shuffleQuestions();
     showQuestion();
 
-    if (gameType === value.timed) {
+
+    console.log(type)
+    if (type === 'normal') {
+        gameBtns.forEach((button =>
+            button.addEventListener('click', function (e) {
+                if (button.dataset.answer === questions[currentQuestion].answer) {
+                    /* increase score by 1 if the user clicks the correct answer */
+                    score++;
+                    console.log("score is", score)
+                    correct();
+                } else {
+                    alert("WRONG!");
+                }
+                currentQuestion++;
+                showQuestion();
+
+                if (currentQuestion >= maxQuestions) {
+                    endGame();
+                }
+            })
+        ))
+    } else {
+        gameBtns.forEach((button =>
+            button.addEventListener('click', function (e) {
+                if (button.dataset.answer === questions[currentQuestion].answer) {
+                    /* increase score by 1 if the user clicks the correct answer */
+                    score++;
+                    console.log("score is", score)
+                    correct();
+                } else {
+                    alert("WRONG!");
+                }
+                currentQuestion++;
+                showQuestion();
+            })
+        ))
         timer();
+
     }
 
 }
+
 
 
 /* show question function to pick a random question from the array of questions */
@@ -228,8 +266,6 @@ function showQuestion() {
     optionA.innerText = q.choiceA;
     optionB.innerText = q.choiceB;
     optionC.innerText = q.choiceC;
-
-
 }
 
 /* function for if the user clicks the start again button. Should restart the quiz from the beginning */
@@ -241,34 +277,12 @@ function startAgain() {
     questionsContainer.style.display = "flex";
     scoreCard.style.display = "none";
     startQuiz();
-
-
-
-
 }
 
 
 /* function to check if the user has selected the right answer */
 
-function isAnswerCorrect(answer) {
-    if (answer === questions[currentQuestion].answer) {
-        /* increase score by 1 if the user clicks the correct answer */
-        score++;
-        console.log("score is", score)
-        correct();
-    } else {
-        alert("WRONG!");
-    }
-    currentQuestion++;
-    showQuestion();
 
-    if (currentQuestion >= maxQuestions) {
-        endGame();
-    }
-
-    /*move to next question in the array*/
-
-}
 
 
 /* function if the user selects the right or wrong answer */
@@ -325,14 +339,13 @@ function shuffleQuestions() {
 
 
 function timer() {
-    count--;
-    clock.innerText = count;
-    console.log("count", count);
-    if (count === 0) {
-        endGame();
-
-
-
-
-    }
+    let quizTimer = setInterval(() => {
+        count--;
+        clock.innerText = count;
+        console.log("count", count);
+        if (count === 0) {
+            clearInterval(quizTimer);
+            endGame();
+        }
+    }, 1000)
 }
