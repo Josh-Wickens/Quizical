@@ -41,7 +41,7 @@ i {
     display: flex;
     width: 100%;
     justify-content: center;
-    margin-top: 10%;
+    margin-top: 20px;
     font-size: 2rem;
     text-shadow: 5px 5px 5px lightgoldenrodyellow;
 }
@@ -137,8 +137,9 @@ i {
 }
 
 #clock-contain {
-    font-size: 125%;
-    background-color: white;
+    font-size: 150%;
+    text-shadow: 2px 2px 2px lightgoldenrodyellow;
+
     display: flex;
     justify-content: center;
     font-family: 'arimo', sans-serif;
