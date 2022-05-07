@@ -123,14 +123,16 @@ let currentQuestion = 0;
 let score = 0;
 const maxQuestions = 10;
 let userName = document.getElementById("name");
-let gameBtns = Array.from(document.getElementsByClassName('game-button'))
+let gameBtns = Array.from(document.getElementsByClassName('game-button'));
+let nameInput = document.getElementById
+let usernameInput = document.getElementById("name").value;
 
 /* Timer Variables */
 
 const questionTime = 0;
 let clockContainer = document.getElementById("clock-contain");
 let clock = document.getElementById("timer-clock");
-let count = 10;
+let count = 60;
 
 
 /* Modal variables */
@@ -185,12 +187,14 @@ function openModal(modal) {
     if (modal == null) return;
     modal.classList.add('active');
     overlay.classList.add('active');
+    userName.value = "Harry Potter";
 }
 
 function closeModal() {
     if (modal == null || userName.value === "") {
+        startNormal = disabled;
+        timedGame = disabled;
 
-        alert("Please insert a name");
     } else {
         modal.classList.remove('active');
         overlay.classList.remove('active');
@@ -202,8 +206,6 @@ function closeModal() {
 
 
 /* Start quiz function */
-
-let radios = document.querySelectorAll('input[type=radio]');
 
 function startQuiz(type) {
 
@@ -223,10 +225,12 @@ function startQuiz(type) {
                     console.log("score is", score)
                     correct();
                 } else {
-                    alert("WRONG!");
+                    questionsContainer.style.backgroundColor = "red";
                 }
+
                 currentQuestion++;
                 showQuestion();
+                questionsContainer.style.backgroundColor = "rgba(12, 6, 6, 0.534)";
 
                 if (currentQuestion >= maxQuestions) {
                     endGame();
@@ -239,7 +243,7 @@ function startQuiz(type) {
                 if (button.dataset.answer === questions[currentQuestion].answer) {
                     /* increase score by 1 if the user clicks the correct answer */
                     score++;
-                    console.log("score is", score)
+                    console.log(name, "score is", score)
                     correct();
                 } else {
                     alert("WRONG!");
@@ -248,7 +252,9 @@ function startQuiz(type) {
                 showQuestion();
             })
         ))
+
         timer();
+
 
     }
 
@@ -276,7 +282,10 @@ function startAgain() {
     console.log("start again clicked")
     questionsContainer.style.display = "flex";
     scoreCard.style.display = "none";
-    startQuiz();
+
+    endGame();
+    openModal(modal);
+    /*startQuiz();*/
 }
 
 
@@ -315,7 +324,7 @@ function showResults() {
 
     console.log("score should be revealed")
     scoreCard.style.display = "flex";
-    document.getElementById('score').innerText = `${score} out of 10`;
+    document.getElementById('score').innerText = `${usernameInput} scored , ${score} `;
     startAgainButton.innerText = "TRY AGAIN?";
 
 }
@@ -339,6 +348,8 @@ function shuffleQuestions() {
 
 
 function timer() {
+    clock.innerText = count;
+
     let quizTimer = setInterval(() => {
         count--;
         clock.innerText = count;

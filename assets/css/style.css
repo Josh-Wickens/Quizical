@@ -17,6 +17,11 @@ p {
     font-weight: 400;
 }
 
+i {
+    color: gold;
+    text-shadow: 2px 2px 5px lightgoldenrodyellow;
+}
+
 #logo {
     font-family: 'orelega one', cursive;
     font-size: 200%;
@@ -30,6 +35,15 @@ p {
     letter-spacing: 4px;
     padding: 10px 0;
 
+}
+
+#site-info {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 10%;
+    font-size: 2rem;
+    text-shadow: 5px 5px 5px lightgoldenrodyellow;
 }
 
 #question-container {
