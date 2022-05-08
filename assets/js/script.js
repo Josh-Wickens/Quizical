@@ -106,7 +106,499 @@ const questions = [{
         answer: "a"
     },
 
+    {
+        id: 13,
+        question: "What year was the first Harry Potter movie released",
+        choiceA: "2000",
+        choiceB: "2001",
+        choiceC: "2002",
+        answer: "b"
+    },
+
+    {
+        id: 14,
+        question: "What is the named of Albus Dumbledore's brother?",
+        choiceA: "Alfred",
+        choiceB: "Alberton",
+        choiceC: "Aberforth",
+        answer: "c"
+    },
+
+    {
+        id: 15,
+        question: "How old was Harry Potter when he found out he was a wizard?",
+        choiceA: "11",
+        choiceB: "12",
+        choiceC: "13",
+        answer: "a"
+    },
+
+    {
+        id: 16,
+        question: "Who revealed to Lily Potter that she was a witch?",
+        choiceA: "Albus Dubledore",
+        choiceB: "Professor Mcgonagall ",
+        choiceC: "Severus Snape",
+        answer: "c"
+    },
+
+    {
+        id: 17,
+        question: "What is Ginny Weasley's actual first name?",
+        choiceA: "Gianna",
+        choiceB: "Genevieve ",
+        choiceC: "Ginevra",
+        answer: "c"
+    },
+
+    {
+        id: 18,
+        question: "Which chess piece does the Lovegood House resemble?",
+        choiceA: "Rook",
+        choiceB: "Pawn ",
+        choiceC: "Knight",
+        answer: "a"
+    },
+
+    {
+        id: 19,
+        question: "Which character served as a Quidditch commentator?",
+        choiceA: "Seamus Finnigan",
+        choiceB: "Lee Jordan",
+        choiceC: "Dean Thomas",
+        answer: "b"
+    },
+
+    {
+        id: 19,
+        question: "How many founding members of Hogwarts are there in total?",
+        choiceA: "4",
+        choiceB: "5",
+        choiceC: "6",
+        answer: "a"
+    },
+
+    {
+        id: 20,
+        question: "What is it customary for wizardkind to do before dueling?",
+        choiceA: "Touch wands",
+        choiceB: "Salute",
+        choiceC: "Bow",
+        answer: "c"
+    },
+
+    {
+        id: 21,
+        question: "What wood is Harry Potter's wand made out of?",
+        choiceA: "Elderwood",
+        choiceB: "Oak",
+        choiceC: "Holly",
+        answer: "c"
+    },
+
+    {
+        id: 22,
+        question: "What is the name of Harry Potter's auntie?",
+        choiceA: "Petunia",
+        choiceB: "Patricia",
+        choiceC: "Priscilla",
+        answer: "a"
+    },
+
+    {
+        id: 23,
+        question: "How many original Harry Potter movies are there in total?",
+        choiceA: "6",
+        choiceB: "7",
+        choiceC: "8",
+        answer: "c"
+    },
+
+    {
+        id: 24,
+        question: "Where is Azkaban fortress located?",
+        choiceA: "The Black Sea",
+        choiceB: "The North Sea",
+        choiceC: "The Great Sea",
+        answer: "b"
+    },
+
+    {
+        id: 25,
+        question: "Who was the part-goblin Head of Ravenclaw House?",
+        choiceA: "Horace Slughorn",
+        choiceB: "Pomona Sprout",
+        choiceC: "Filius Flitwick",
+        answer: "c"
+    },
+
+    {
+        id: 26,
+        question: "What is the name of the poltergeist that lives at Hogwarts?",
+        choiceA: "Filtch",
+        choiceB: "Peeves",
+        choiceC: "Firenze",
+        answer: "b"
+    },
+
+    {
+        id: 27,
+        question: "What is N.E.W.T.?",
+        choiceA: "Exam",
+        choiceB: "Newspaper",
+        choiceC: "Potion",
+        answer: "a"
+    },
+
+    {
+        id: 27,
+        question: "What is the name of Argus Filch's pet cat?",
+        choiceA: "Miss Sybill",
+        choiceB: "Mrs Norris",
+        choiceC: "Lady Olga",
+        answer: "b"
+    },
+
+    {
+        id: 28,
+        question: "Which one of Seamus Finnigan's parents was wizardkind?",
+        choiceA: "Mother",
+        choiceB: "Father",
+        choiceC: "Neither",
+        answer: "a"
+    },
+
+    {
+        id: 29,
+        question: "A non-magical person who has at least one magical parent is called what?",
+        choiceA: "Muggle",
+        choiceB: "Mudblood",
+        choiceC: "Squib",
+        answer: "c"
+    },
+
+    {
+        id: 30,
+        question: "Who is Harry Potter's godfather?",
+        choiceA: "Sirius Black",
+        choiceB: "Severous Snape",
+        choiceC: "Remus Lupin",
+        answer: "a"
+    },
+
+    {
+        id: 31,
+        question: "What street did the Dursley's live on?",
+        choiceA: "Castle Street",
+        choiceB: "Privit Drive",
+        choiceC: "Hawthorn Avenue",
+        answer: "b"
+    },
+
+    {
+        id: 32,
+        question: "Who was Hermione's date at the Yule Ball??",
+        choiceA: "Cedric Diggory",
+        choiceB: "Viktor Krum",
+        choiceC: "Ron Weasley",
+        answer: "b"
+    },
+
+    {
+        id: 33,
+        question: "What is the name of the Weasley's house?",
+        choiceA: "The Burrow",
+        choiceB: "The Crevice",
+        choiceC: "The Hollow",
+        answer: "a"
+    },
+
+    {
+        id: 34,
+        question: "Who created the Sorting Hat?",
+        choiceA: "The Ministry of Magic",
+        choiceB: "Albus Dubledore",
+        choiceC: "Founders of Hogwarts",
+        answer: "c"
+    },
+
+    {
+        id: 35,
+        question: "Who was flying with Mad Eye Moody when he died?",
+        choiceA: "Ron Weasley",
+        choiceB: "Tonks",
+        choiceC: "Mundungus Fletcher",
+        answer: "c"
+    },
+
+    {
+        id: 36,
+        question: "What's device that Dumbledore uses when putting out street lights?",
+        choiceA: "Deluminator",
+        choiceB: "Probity Probe",
+        choiceC: "Omniocular",
+        answer: "a"
+    },
+
+    {
+        id: 37,
+        question: "What position does Harry play on the Quidditch team?",
+        choiceA: "Keeper",
+        choiceB: "Catcher",
+        choiceC: "Seeker",
+        answer: "c"
+    },
+
+    {
+        id: 38,
+        question: "What dark wizard did Albus Dumbledore defeat in 1945?",
+        choiceA: "Tom Riddle",
+        choiceB: "Grindelwald",
+        choiceC: "Salazar",
+        answer: "b"
+    },
+
+    {
+        id: 39,
+        question: "How did Harry and Ron get to Hogwarts their second year?",
+        choiceA: "Flying Car",
+        choiceB: "Broom",
+        choiceC: "Train",
+        answer: "a"
+    },
+
+    {
+        id: 40,
+        question: "What is Tom Riddle's middle name?",
+        choiceA: "Marvolo",
+        choiceB: "Marko",
+        choiceC: "Mazarlo",
+        answer: "a"
+    },
+
+    {
+        id: 41,
+        question: "Which type of insect is Ronald Weasley most afraid of?",
+        choiceA: "Wasp",
+        choiceB: "Spider",
+        choiceC: "Scorpian",
+        answer: "b"
+    },
+
+    {
+        id: 42,
+        question: "What is the name of Hagrid's big dog?",
+        choiceA: "Fawkes",
+        choiceB: "Padfoot",
+        choiceC: "Fluffy",
+        answer: "c"
+    },
+
+    {
+        id: 43,
+        question: "Finish the quote: 'After all this time?'",
+        choiceA: "Forever",
+        choiceB: "Always",
+        choiceC: "Eternally",
+        answer: "b"
+    },
+
+    {
+        id: 44,
+        question: "What animal do you see first in the first movie?",
+        choiceA: "Cat",
+        choiceB: "Dog",
+        choiceC: "Owl",
+        answer: "c"
+    },
+
+    {
+        id: 45,
+        question: "What is the first spell that was cast by Hermione?",
+        choiceA: "Oculus Reparo",
+        choiceB: "Lumos",
+        choiceC: "Wingardium Leviosa",
+        answer: "a"
+    },
+
+    {
+        id: 45,
+        question: "What is the first spell that was cast by Hermione?",
+        choiceA: "Oculus Reparo",
+        choiceB: "Lumos",
+        choiceC: "Wingardium Leviosa",
+        answer: "a"
+    },
+
+    {
+        id: 46,
+        question: "Which vault was the Philosopher's Stone kept in?",
+        choiceA: "711",
+        choiceB: "712",
+        choiceC: "713",
+        answer: "c"
+    },
+
+    {
+        id: 47,
+        question: "Who, according to Harry, did Dumbledore see right through?",
+        choiceA: "Nearly Headless Nick",
+        choiceB: "Tom Riddle",
+        choiceC: "Draco Malfoy",
+        answer: "b"
+    },
+
+    {
+        id: 48,
+        question: "What did Fawkes give Harry when he was running from the Basilisk?",
+        choiceA: "Sorting Hat",
+        choiceB: "Sword",
+        choiceC: "Wand",
+        answer: "a"
+    },
+
+    {
+        id: 49,
+        question: "What does Ron receive after stealing the flying car?",
+        choiceA: "A curse",
+        choiceB: "A howler",
+        choiceC: "A detention",
+        answer: "b"
+    },
+
+    {
+        id: 50,
+        question: "Who did Scabbers turn out to be in the movie?",
+        choiceA: "Barty Crouch, Jr.",
+        choiceB: "Fenrir Greyback",
+        choiceC: "Peter Pettigrew",
+        answer: "c"
+    },
+
+    {
+        id: 51,
+        question: "Who is Stan Shunpike in the Harry Potter movie?",
+        choiceA: "Bus Conductor",
+        choiceB: "Hogwarts Professor",
+        choiceC: "Goblin at Gringotts Bank",
+        answer: "a"
+    },
+
+    {
+        id: 52,
+        question: "Who put Harry's name in the Goblet of Fire?",
+        choiceA: "Igor Karkaroff",
+        choiceB: "Viktor Krum",
+        choiceC: "Barty Crouch, Jr",
+        answer: "c"
+    },
+
+    {
+        id: 53,
+        question: "Who yelled, 'Stop it! Can't you see it's bothering him? Stop it!'",
+        choiceA: "Neville Longbottom",
+        choiceB: "Hermione Granger",
+        choiceC: "Harry Potter",
+        answer: "b"
+    },
+
+    {
+        id: 54,
+        question: "What is the name of the journalist?",
+        choiceA: "Hannah Abbott",
+        choiceB: "Angelina Johnson",
+        choiceC: "Rita Skeeter",
+        answer: "b"
+    },
+
+    {
+        id: 55,
+        question: "What is the name of the pub where 'Dumbledore's Army' is created?",
+        choiceA: "The Hog's head",
+        choiceB: "The Green Dragon",
+        choiceC: "The Leaky Cauldron",
+        answer: "a"
+    },
+
+    {
+        id: 56,
+        question: "The film Order of the Phoenix had how many quiddich games",
+        choiceA: "0",
+        choiceB: "1",
+        choiceC: "2",
+        answer: "a"
+    },
+
+    {
+        id: 57,
+        question: "Who escorts Harry Potter to the Ministry for his hearing?",
+        choiceA: "Hagrid",
+        choiceB: "Dumbledore",
+        choiceC: "Arthur Weasley",
+        answer: "c"
+    },
+
+    {
+        id: 58,
+        question: "What is the name of Cedric Diggory's father?",
+        choiceA: "Ernie",
+        choiceB: "Percy",
+        choiceC: "Amos",
+        answer: "c"
+    },
+
+    {
+        id: 59,
+        question: "Who gives Harry Potter Occlumency lessons?",
+        choiceA: "Professor Trelawney",
+        choiceB: "Serverus Snape",
+        choiceC: "Remus Lupin",
+        answer: "b"
+    },
+
+    {
+        id: 60,
+        question: "Where did Harry and Cho kiss for the first time?",
+        choiceA: "Stairway",
+        choiceB: "Room of Requirement",
+        choiceC: "Gryffindor Common Room",
+        answer: "b"
+    },
+
+    {
+        id: 61,
+        question: "What name was written in the old potion's book that Harry received?",
+        choiceA: "Tom Riddle",
+        choiceB: "Salazar Slytherin",
+        choiceC: "Half Blood Prince",
+        answer: "c"
+    },
+
+    {
+        id: 62,
+        question: "Who finds Harry paralyzed in the train carriage?",
+        choiceA: "Luna Lovegood",
+        choiceB: "Ron WeasleHy",
+        choiceC: "Neville Longbottom",
+        answer: "a"
+    },
+
+    {
+        id: 63,
+        question: "What spell does Draco use to paralyze Harry in the carriage?",
+        choiceA: "Stupefy",
+        choiceB: "Immobulus",
+        choiceC: "Petrificus Totalus",
+        answer: "c"
+    },
+
+
+
+
+
 ];
+
+
 
 let highScores = [{
         highscoreName: "Harry",
