@@ -132,7 +132,7 @@ let usernameInput;
 const questionTime = 0;
 let clockContainer = document.getElementById("clock-contain");
 let clock = document.getElementById("timer-clock");
-let count = 5;
+let count = 60;
 
 
 /* Modal variables */
@@ -333,7 +333,7 @@ function showResults() {
 
     console.log("score should be revealed")
     scoreCard.style.display = "flex";
-    document.getElementById('score').innerText = `${usernameInput} scored , ${score} `;
+    document.getElementById('score').innerText = `${usernameInput} scored:  ${score} `;
     startAgainButton.innerText = "TRY AGAIN?";
 
 }
