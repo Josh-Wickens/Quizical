@@ -125,20 +125,21 @@ const maxQuestions = 10;
 let userName = document.getElementById("name");
 let gameBtns = Array.from(document.getElementsByClassName('game-button'));
 let nameInput = document.getElementById
-let usernameInput = document.getElementById("name").value;
+let usernameInput;
 
 /* Timer Variables */
 
 const questionTime = 0;
 let clockContainer = document.getElementById("clock-contain");
 let clock = document.getElementById("timer-clock");
-let count = 60;
+let count = 5;
 
 
 /* Modal variables */
 const openModalBtn = document.querySelectorAll('[data-modal-target]');
 const closeModalBtn = document.querySelectorAll('[data-close-button]');
 const overlay = document.getElementById("overlay");
+
 
 
 /* DOM loaded event listener and quiz loaded */
@@ -156,16 +157,18 @@ closeModalBtn.forEach(button => {
         closeModal(modal);
     })
 })
-
+let quizTimer;
 let startNormal = document.getElementById("submit-normal");
 let timedGame = document.getElementById('submit-timed')
 let startAgainButton = document.getElementById("start-again");
 startAgainButton.addEventListener('click', startAgain);
 startNormal.addEventListener('click', function () {
     startQuiz('normal')
+    usernameInput = document.getElementById('name').value
 }, false);
 timedGame.addEventListener('click', function () {
     startQuiz('timed')
+    usernameInput = document.getElementById('name').value
 }, false);
 document.addEventListener("DOMContentLoaded", function () {
     console.log("1st load");
@@ -188,6 +191,7 @@ function openModal(modal) {
     modal.classList.add('active');
     overlay.classList.add('active');
     userName.value = "Harry Potter";
+    clearInterval(quizTimer);
 }
 
 function closeModal() {
@@ -225,6 +229,7 @@ function startQuiz(type) {
                     console.log("score is", score)
                     correct();
                 } else {
+                    incorrect();
                     questionsContainer.style.backgroundColor = "red";
                 }
 
@@ -277,15 +282,18 @@ function showQuestion() {
 /* function for if the user clicks the start again button. Should restart the quiz from the beginning */
 
 function startAgain() {
-    currentQuestion = [0];
+    window.location.reload();
+
+    /*currentQuestion = [0];
     score = 0;
+    count = 5;
+    clearInterval(quizTimer)
     console.log("start again clicked")
     questionsContainer.style.display = "flex";
     scoreCard.style.display = "none";
-
-    endGame();
     openModal(modal);
-    /*startQuiz();*/
+    */
+
 }
 
 
@@ -297,12 +305,13 @@ function startAgain() {
 /* function if the user selects the right or wrong answer */
 
 function correct() {
-    alert("Correct!")
+    alert("Correct!");
 
 }
 
 function incorrect() {
-    alert("ran out of time");
+    alert("incorrect");
+
 
 }
 
