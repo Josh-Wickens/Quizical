@@ -170,7 +170,7 @@ const questions = [{
     },
 
     {
-        id: 19,
+        id: 20,
         question: "How many founding members of Hogwarts are there in total?",
         choiceA: "4",
         choiceB: "5",
@@ -179,7 +179,7 @@ const questions = [{
     },
 
     {
-        id: 20,
+        id: 21,
         question: "What is it customary for wizardkind to do before dueling?",
         choiceA: "Touch wands",
         choiceB: "Salute",
@@ -188,7 +188,7 @@ const questions = [{
     },
 
     {
-        id: 21,
+        id: 22,
         question: "What wood is Harry Potter's wand made out of?",
         choiceA: "Elderwood",
         choiceB: "Oak",
@@ -197,7 +197,7 @@ const questions = [{
     },
 
     {
-        id: 22,
+        id: 23,
         question: "What is the name of Harry Potter's auntie?",
         choiceA: "Petunia",
         choiceB: "Patricia",
@@ -206,7 +206,7 @@ const questions = [{
     },
 
     {
-        id: 23,
+        id: 24,
         question: "How many original Harry Potter movies are there in total?",
         choiceA: "6",
         choiceB: "7",
@@ -215,7 +215,7 @@ const questions = [{
     },
 
     {
-        id: 24,
+        id: 25,
         question: "Where is Azkaban fortress located?",
         choiceA: "The Black Sea",
         choiceB: "The North Sea",
@@ -224,7 +224,7 @@ const questions = [{
     },
 
     {
-        id: 25,
+        id: 26,
         question: "Who was the part-goblin Head of Ravenclaw House?",
         choiceA: "Horace Slughorn",
         choiceB: "Pomona Sprout",
@@ -233,7 +233,7 @@ const questions = [{
     },
 
     {
-        id: 26,
+        id: 27,
         question: "What is the name of the poltergeist that lives at Hogwarts?",
         choiceA: "Filtch",
         choiceB: "Peeves",
@@ -242,7 +242,7 @@ const questions = [{
     },
 
     {
-        id: 27,
+        id: 28,
         question: "What is N.E.W.T.?",
         choiceA: "Exam",
         choiceB: "Newspaper",
@@ -251,7 +251,7 @@ const questions = [{
     },
 
     {
-        id: 27,
+        id: 29,
         question: "What is the name of Argus Filch's pet cat?",
         choiceA: "Miss Sybill",
         choiceB: "Mrs Norris",
@@ -260,7 +260,7 @@ const questions = [{
     },
 
     {
-        id: 28,
+        id: 30,
         question: "Which one of Seamus Finnigan's parents was wizardkind?",
         choiceA: "Mother",
         choiceB: "Father",
@@ -269,7 +269,7 @@ const questions = [{
     },
 
     {
-        id: 29,
+        id: 31,
         question: "A non-magical person who has at least one magical parent is called what?",
         choiceA: "Muggle",
         choiceB: "Mudblood",
@@ -278,7 +278,7 @@ const questions = [{
     },
 
     {
-        id: 30,
+        id: 32,
         question: "Who is Harry Potter's godfather?",
         choiceA: "Sirius Black",
         choiceB: "Severous Snape",
@@ -287,7 +287,7 @@ const questions = [{
     },
 
     {
-        id: 31,
+        id: 33,
         question: "What street did the Dursley's live on?",
         choiceA: "Castle Street",
         choiceB: "Privit Drive",
@@ -296,7 +296,7 @@ const questions = [{
     },
 
     {
-        id: 32,
+        id: 34,
         question: "Who was Hermione's date at the Yule Ball??",
         choiceA: "Cedric Diggory",
         choiceB: "Viktor Krum",
@@ -305,7 +305,7 @@ const questions = [{
     },
 
     {
-        id: 33,
+        id: 35,
         question: "What is the name of the Weasley's house?",
         choiceA: "The Burrow",
         choiceB: "The Crevice",
@@ -314,7 +314,7 @@ const questions = [{
     },
 
     {
-        id: 34,
+        id: 36,
         question: "Who created the Sorting Hat?",
         choiceA: "The Ministry of Magic",
         choiceB: "Albus Dubledore",
@@ -323,7 +323,7 @@ const questions = [{
     },
 
     {
-        id: 35,
+        id: 37,
         question: "Who was flying with Mad Eye Moody when he died?",
         choiceA: "Ron Weasley",
         choiceB: "Tonks",
@@ -332,7 +332,7 @@ const questions = [{
     },
 
     {
-        id: 36,
+        id: 38,
         question: "What's device that Dumbledore uses when putting out street lights?",
         choiceA: "Deluminator",
         choiceB: "Probity Probe",
@@ -341,7 +341,7 @@ const questions = [{
     },
 
     {
-        id: 37,
+        id: 39,
         question: "What position does Harry play on the Quidditch team?",
         choiceA: "Keeper",
         choiceB: "Catcher",
@@ -350,7 +350,7 @@ const questions = [{
     },
 
     {
-        id: 38,
+        id: 40,
         question: "What dark wizard did Albus Dumbledore defeat in 1945?",
         choiceA: "Tom Riddle",
         choiceB: "Grindelwald",
@@ -359,7 +359,7 @@ const questions = [{
     },
 
     {
-        id: 39,
+        id: 41,
         question: "How did Harry and Ron get to Hogwarts their second year?",
         choiceA: "Flying Car",
         choiceB: "Broom",
@@ -368,7 +368,7 @@ const questions = [{
     },
 
     {
-        id: 40,
+        id: 42,
         question: "What is Tom Riddle's middle name?",
         choiceA: "Marvolo",
         choiceB: "Marko",
@@ -377,7 +377,7 @@ const questions = [{
     },
 
     {
-        id: 41,
+        id: 43,
         question: "Which type of insect is Ronald Weasley most afraid of?",
         choiceA: "Wasp",
         choiceB: "Spider",
@@ -386,7 +386,7 @@ const questions = [{
     },
 
     {
-        id: 42,
+        id: 44,
         question: "What is the name of Hagrid's big dog?",
         choiceA: "Fawkes",
         choiceB: "Padfoot",
@@ -395,7 +395,7 @@ const questions = [{
     },
 
     {
-        id: 43,
+        id: 45,
         question: "Finish the quote: 'After all this time?'",
         choiceA: "Forever",
         choiceB: "Always",
@@ -404,7 +404,7 @@ const questions = [{
     },
 
     {
-        id: 44,
+        id: 46,
         question: "What animal do you see first in the first movie?",
         choiceA: "Cat",
         choiceB: "Dog",
@@ -413,7 +413,7 @@ const questions = [{
     },
 
     {
-        id: 45,
+        id: 47,
         question: "What is the first spell that was cast by Hermione?",
         choiceA: "Oculus Reparo",
         choiceB: "Lumos",
@@ -422,7 +422,7 @@ const questions = [{
     },
 
     {
-        id: 45,
+        id: 48,
         question: "What is the first spell that was cast by Hermione?",
         choiceA: "Oculus Reparo",
         choiceB: "Lumos",
@@ -431,7 +431,7 @@ const questions = [{
     },
 
     {
-        id: 46,
+        id: 49,
         question: "Which vault was the Philosopher's Stone kept in?",
         choiceA: "711",
         choiceB: "712",
@@ -440,7 +440,7 @@ const questions = [{
     },
 
     {
-        id: 47,
+        id: 50,
         question: "Who, according to Harry, did Dumbledore see right through?",
         choiceA: "Nearly Headless Nick",
         choiceB: "Tom Riddle",
@@ -449,7 +449,7 @@ const questions = [{
     },
 
     {
-        id: 48,
+        id: 51,
         question: "What did Fawkes give Harry when he was running from the Basilisk?",
         choiceA: "Sorting Hat",
         choiceB: "Sword",
@@ -458,7 +458,7 @@ const questions = [{
     },
 
     {
-        id: 49,
+        id: 52,
         question: "What does Ron receive after stealing the flying car?",
         choiceA: "A curse",
         choiceB: "A howler",
@@ -467,7 +467,7 @@ const questions = [{
     },
 
     {
-        id: 50,
+        id: 53,
         question: "Who did Scabbers turn out to be in the movie?",
         choiceA: "Barty Crouch, Jr.",
         choiceB: "Fenrir Greyback",
@@ -476,7 +476,7 @@ const questions = [{
     },
 
     {
-        id: 51,
+        id: 54,
         question: "Who is Stan Shunpike in the Harry Potter movie?",
         choiceA: "Bus Conductor",
         choiceB: "Hogwarts Professor",
@@ -485,7 +485,7 @@ const questions = [{
     },
 
     {
-        id: 52,
+        id: 55,
         question: "Who put Harry's name in the Goblet of Fire?",
         choiceA: "Igor Karkaroff",
         choiceB: "Viktor Krum",
@@ -494,7 +494,7 @@ const questions = [{
     },
 
     {
-        id: 53,
+        id: 56,
         question: "Who yelled, 'Stop it! Can't you see it's bothering him? Stop it!'",
         choiceA: "Neville Longbottom",
         choiceB: "Hermione Granger",
@@ -503,16 +503,16 @@ const questions = [{
     },
 
     {
-        id: 54,
+        id: 57,
         question: "What is the name of the journalist?",
         choiceA: "Hannah Abbott",
         choiceB: "Angelina Johnson",
         choiceC: "Rita Skeeter",
-        answer: "b"
+        answer: "c"
     },
 
     {
-        id: 55,
+        id: 58,
         question: "What is the name of the pub where 'Dumbledore's Army' is created?",
         choiceA: "The Hog's head",
         choiceB: "The Green Dragon",
@@ -521,7 +521,7 @@ const questions = [{
     },
 
     {
-        id: 56,
+        id: 59,
         question: "The film Order of the Phoenix had how many quiddich games",
         choiceA: "0",
         choiceB: "1",
@@ -530,7 +530,7 @@ const questions = [{
     },
 
     {
-        id: 57,
+        id: 60,
         question: "Who escorts Harry Potter to the Ministry for his hearing?",
         choiceA: "Hagrid",
         choiceB: "Dumbledore",
@@ -539,7 +539,7 @@ const questions = [{
     },
 
     {
-        id: 58,
+        id: 61,
         question: "What is the name of Cedric Diggory's father?",
         choiceA: "Ernie",
         choiceB: "Percy",
@@ -548,7 +548,7 @@ const questions = [{
     },
 
     {
-        id: 59,
+        id: 62,
         question: "Who gives Harry Potter Occlumency lessons?",
         choiceA: "Professor Trelawney",
         choiceB: "Serverus Snape",
@@ -557,7 +557,7 @@ const questions = [{
     },
 
     {
-        id: 60,
+        id: 63,
         question: "Where did Harry and Cho kiss for the first time?",
         choiceA: "Stairway",
         choiceB: "Room of Requirement",
@@ -566,7 +566,7 @@ const questions = [{
     },
 
     {
-        id: 61,
+        id: 64,
         question: "What name was written in the old potion's book that Harry received?",
         choiceA: "Tom Riddle",
         choiceB: "Salazar Slytherin",
@@ -575,7 +575,7 @@ const questions = [{
     },
 
     {
-        id: 62,
+        id: 65,
         question: "Who finds Harry paralyzed in the train carriage?",
         choiceA: "Luna Lovegood",
         choiceB: "Ron WeasleHy",
@@ -584,13 +584,123 @@ const questions = [{
     },
 
     {
-        id: 63,
+        id: 66,
         question: "What spell does Draco use to paralyze Harry in the carriage?",
         choiceA: "Stupefy",
         choiceB: "Immobulus",
         choiceC: "Petrificus Totalus",
         answer: "c"
     },
+
+    {
+        id: 67,
+        question: "Who was Harry's date at Slughorn's Christmas Party?",
+        choiceA: "Cho Chang",
+        choiceB: "Luna Lovegood",
+        choiceC: "Hermione Granger",
+        answer: "b"
+    },
+
+    {
+        id: 68,
+        question: "What did Griphook want from Harry Potter for helping him break into Gringotts?",
+        choiceA: "Gold",
+        choiceB: "A Wand",
+        choiceC: "Sword of Gryffindor",
+        answer: "c"
+    },
+
+    {
+        id: 69,
+        question: "Who kills Snape?",
+        choiceA: "Voldemort",
+        choiceB: "Draco Malfoy",
+        choiceC: "Nagini",
+        answer: "c"
+    },
+
+    {
+        id: 70,
+        question: "Where did Harry and Ron meet?",
+        choiceA: "Hogwarts Express",
+        choiceB: "King's Cross Station",
+        choiceC: "Hogwarts",
+        answer: "b"
+    },
+
+    {
+        id: 71,
+        question: "Which spell is also known as the Thief's Friend?",
+        choiceA: "Lumos",
+        choiceB: "Accio",
+        choiceC: "Alohomora",
+        answer: "c"
+    },
+
+    {
+        id: 72,
+        question: "What animal can Remus Lupin turn into?",
+        choiceA: "Warewolf",
+        choiceB: "Dog",
+        choiceC: "Rat",
+        answer: "a"
+    },
+
+    {
+        id: 73,
+        question: "What species did Hagrid's pet dragon, Norbert, belong to?",
+        choiceA: "Welsh Green",
+        choiceB: "Norwegian Ridgeback",
+        choiceC: "Hungarian Horntail",
+        answer: "b"
+    },
+
+    {
+        id: 74,
+        question: "Where did Ron and Harry crash the flying car on their way to Hogwarts?",
+        choiceA: "Hogwarts Tower",
+        choiceB: "Hagrids Hut",
+        choiceC: "Whomping Willow",
+        answer: "c"
+    },
+
+    {
+        id: 75,
+        question: "What do you recite to close the Marauder's Map?",
+        choiceA: "I am up to no good",
+        choiceB: "Mischief Managed",
+        choiceC: "Accio Map",
+        answer: "b"
+    },
+
+    {
+        id: 76,
+        question: "What is Harry's Patronus?",
+        choiceA: "Stag",
+        choiceB: "Dog",
+        choiceC: "Horse",
+        answer: "a"
+    },
+
+    {
+        id: 77,
+        question: "What spell created by the Half Blood Prince did Harry use on Draco Malfoy?",
+        choiceA: "Scourgify",
+        choiceB: "Sectumsempra",
+        choiceC: "Serpensortia",
+        answer: "b"
+    },
+
+    {
+        id: 78,
+        question: "During Harry's first year in Hogwarts, what is the password given to the 'Fat Lady'",
+        choiceA: "Bertie Botts",
+        choiceB: "Balderdash",
+        choiceC: "Caput Draconis",
+        answer: "c"
+    },
+
+
 
 
 

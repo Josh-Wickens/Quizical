@@ -87,15 +87,9 @@ i {
 }
 
 .button:hover {
-    background-color: green;
+    background-color: grey;
 }
 
-#game-type {
-    display: flex;
-    width: -webkit-fill-available;
-    justify-content: space-evenly;
-    padding: 20px;
-}
 
 #under-game {
     display: flex;
