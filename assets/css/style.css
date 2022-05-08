@@ -222,6 +222,63 @@ input[type="radio"] {
     pointer-events: all;
 }
 
+.leaderboard {
+    position: fixed;
+    top: 50%;
+    background-color: rgba(12, 6, 6, 0.534);
+    text-align: center;
+    border: 4px black solid;
+    width: 250px;
+    height: 300px;
+    color: white;
+    font-family: 'kanit', sans-serif;
+
+
+}
+
+table {
+    display: inline-table;
+    width: 90%;
+    height: 90%;
+}
+
+
+thead,
+th,
+td {
+    border: 2px black solid;
+
+}
+
+thead {
+    background-color: black;
+    color: white;
+}
+
+td {
+    background-color: black;
+}
+
+th {
+    color: black;
+    background-color: beige;
+}
+
+/* for screen sizes 550px and down */
+
+@media screen and (max-width: 550px) {
+
+    .button {
+        width: auto;
+        min-width: 100px;
+    }
+
+    #start-again {
+
+        width: auto;
+    }
+}
+
 
 /* for screen sizes 420px and down */
 
@@ -238,4 +295,6 @@ input[type="radio"] {
     #site-info {
         font-size: 5vw;
     }
+
+
 }
