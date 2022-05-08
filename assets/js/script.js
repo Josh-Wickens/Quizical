@@ -153,6 +153,35 @@ let gameBtns = Array.from(document.getElementsByClassName('game-button'));
 let nameInput = document.getElementById
 let usernameInput;
 
+/* correct animation */
+
+const correctAniStart = [{
+        backgroundColor: "rgba(12, 6, 6, 0.534)"
+    },
+    {
+        backgroundColor: "green"
+    },
+    {
+        backgroundColor: "rgba(12, 6, 6, 0.534)"
+    },
+];
+
+const incorrectAniStart = [{
+        backgroundColor: "rgba(12, 6, 6, 0.534)"
+    },
+    {
+        backgroundColor: "red"
+    },
+    {
+        backgroundColor: "rgba(12, 6, 6, 0.534)"
+    },
+];
+
+const aniTiming = {
+    duration: 250,
+    iterations: 1,
+};
+
 /* Timer Variables */
 
 const questionTime = 0;
@@ -263,12 +292,12 @@ function startQuiz(type) {
                     correct();
                 } else {
                     incorrect();
-                    questionsContainer.style.backgroundColor = "red";
+
                 }
 
                 currentQuestion++;
                 showQuestion();
-                questionsContainer.style.backgroundColor = "rgba(12, 6, 6, 0.534)";
+
 
                 if (currentQuestion >= maxQuestions) {
                     endGame();
@@ -284,7 +313,7 @@ function startQuiz(type) {
                     console.log(name, "score is", score)
                     correct();
                 } else {
-                    alert("WRONG!");
+                    incorrect();
                 }
                 currentQuestion++;
                 showQuestion();
@@ -338,12 +367,15 @@ function startAgain() {
 /* function if the user selects the right or wrong answer */
 
 function correct() {
-    alert("Correct!");
+    console.log("correct function")
+    questionsContainer.animate(correctAniStart, aniTiming);
+
 
 }
 
 function incorrect() {
-    alert("incorrect");
+    console.log("incorrect function");
+    questionsContainer.animate(incorrectAniStart, aniTiming);
 
 
 }
