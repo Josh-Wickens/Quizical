@@ -223,6 +223,7 @@ input[type="radio"] {
 }
 
 .leaderboard {
+    display: none;
     position: fixed;
     top: 50%;
     background-color: rgba(12, 6, 6, 0.534);

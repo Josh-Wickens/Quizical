@@ -108,6 +108,32 @@ const questions = [{
 
 ];
 
+let highScores = [{
+        highscoreName: "Harry",
+        highscoreNumber: "17"
+    },
+
+    {
+        highscoreName: "Ron",
+        highscoreNumber: "13"
+    },
+
+    {
+        highscoreName: "Hermione",
+        highscoreNumber: "21"
+    },
+
+    {
+        highscoreName: "Dumbledore",
+        highscoreNumber: "28"
+    },
+
+    {
+        highscoreName: "Draco",
+        highscoreNumber: "11"
+    },
+];
+
 const nContainer = document.getElementById("start-contain");
 const qContainer = document.getElementById("quiz-container");
 const questionsContainer = document.getElementById('question-container');
@@ -139,6 +165,13 @@ let count = 60;
 const openModalBtn = document.querySelectorAll('[data-modal-target]');
 const closeModalBtn = document.querySelectorAll('[data-close-button]');
 const overlay = document.getElementById("overlay");
+
+/* leaderboard */
+
+let latestScore = score.value;
+const highscoresTable = document.getElementById("highscores");
+
+
 
 
 
@@ -335,8 +368,29 @@ function showResults() {
     scoreCard.style.display = "flex";
     document.getElementById('score').innerText = `${usernameInput} scored:  ${score} `;
     startAgainButton.innerText = "TRY AGAIN?";
+    highscoresTable.style.display = "block";
+
 
 }
+
+function sortScores() {
+    for (let i = 0; i < highScores.length; i++)
+        for (let j = 0; j < document.getElementsByTagName("td").length; i++) {
+            j[0].innerText = i[0].value;
+            j[1].innerText = i[1].value;
+
+        }
+    if (latestScore > highScores[1]) {
+        push.usernameInput.highScores[{
+            highscoreName
+        }];
+        push.latestScore.highscores[{
+            highscoreNumber
+        }];
+    }
+}
+
+
 
 /* function to shuffle the order of questions using fisher-yates algorithm */
 
