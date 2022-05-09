@@ -803,29 +803,16 @@ const overlay = document.getElementById("overlay");
 const mostRecentScore = localStorage.getItem('mostRecentScore');
 scoreText.innerText = mostRecentScore;
 
+const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
+const highScoresList = document.getElementById("highscores-rows");
 
-
-
-/*
-
-const numberOfHighscores = 5;
-const HIGH_SCORES = 'highScores';
-const newScore = {
-    score,
-    usernameInput
-};
-
-const highScoreString = localStorage.getItem(HIGH_SCORES);
-const highScores = JSON.parse(highScoreString) ? ? [];
-const lowestScore = highScores[numberOfHighscores - 1] ? .score ? ? 0;
-
-*/
-
-
-
-
-
+highScoresList.innerHTML = highScores.map(score => {
+    return `<tr>
+        <td>${score.name}</td>
+        <td>${score.score}</td>
+        </tr>`;
+})
 
 
 
@@ -982,16 +969,6 @@ function showQuestion() {
 function startAgain() {
     window.location.reload();
 
-    /*currentQuestion = [0];
-    score = 0;
-    count = 5;
-    clearInterval(quizTimer)
-    console.log("start again clicked")
-    questionsContainer.style.display = "flex";
-    scoreCard.style.display = "none";
-    openModal(modal);
-    */
-
 }
 
 
@@ -1025,7 +1002,6 @@ function endGame() {
     console.log("game ended");
     questionsContainer.style.display = "none";
     showResults();
-    console.log(questions);
     return score;
 
 
@@ -1044,68 +1020,28 @@ function showResults() {
     startAgainButton.innerText = "TRY AGAIN?";
     highscoresTable.style.display = "block";
     localStorage.setItem('mostRecentScore', score);
+    saveHighScore();
 
 
 }
 
-/*
+function saveHighScore() {
+    const score = {
+        score: mostRecentScore,
+        name: usernameInput
+    };
+    highScores.push(score);
 
-function sortScores() {
-    for (let i = 0; i < highScores.length; i++) {
-        let data = document.getElementsByTagName("td");
-        data.innerText = i[0]++;
-
-    }
-}
-
-
-/*
-
-function checkHighScore(score) {
-    const highScores = JSON.parse(localStorage.getItem(HIGH_SCORES)) ? ? [];
-    const lowestScore = highScores[numberOfHighscores - 1] ? .score ? ? 0;
-
-    if (score > lowestScore) {
-        saveHighScore(score, highScores);
-        showHighScores();
-    }
-}
-
-function saveHighScore(score, highScores) {
-    
-    const newScore = { score, usernameInput };
-    
-    // 1. Add to list
-    highScores.push(newScore);
-  
-    // 2. Sort the list
     highScores.sort((a, b) => b.score - a.score);
-    
-    // 3. Select new list
-    highScores.splice(numberOfHighscores);
-    
-    // 4. Save to local storage
-    localStorage.setItem(HIGH_SCORES, JSON.stringify(highScores));
-  };
+
+    highScores.splice(5);
+
+    localStorage.setItem('highScores', JSON.stringify(highScores));
+
+    console.log(highScores);
 
 
-
-
-/*for (let j = 0; j < document.getElementsByTagName("td").length; i++) {
-            j[0].innerText = `${i[0].value}`;
-            j[1].innerText = i[1].value;
-
-        }
-    if (latestScore > highScores[1]) {
-        push.usernameInput.highScores[{
-            highscoreName
-        }];
-        push.latestScore.highscores[{
-            highscoreNumber
-        }];
-    }
-}
-*/
+};
 
 
 
