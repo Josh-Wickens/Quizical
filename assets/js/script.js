@@ -799,7 +799,7 @@ const overlay = document.getElementById("overlay");
 
 /* leaderboard */
 
-let latestScore = score.value;
+let latestScore = score.valueOf();
 const highscoresTable = document.getElementById("highscores");
 
 
@@ -898,7 +898,11 @@ function startQuiz(type) {
                 }
 
                 currentQuestion++;
-                showQuestion();
+
+                setTimeout(() => {
+                    showQuestion();
+                }, 500);
+
 
 
                 if (currentQuestion >= maxQuestions) {
@@ -907,26 +911,33 @@ function startQuiz(type) {
             })
         ))
     } else {
-        gameBtns.forEach((button =>
-            button.addEventListener('click', function (e) {
-                if (button.dataset.answer === questions[currentQuestion].answer) {
-                    /* increase score by 1 if the user clicks the correct answer */
-                    score++;
-                    console.log(name, "score is", score)
-                    correct();
-                } else {
-                    incorrect();
-                }
-                currentQuestion++;
-                showQuestion();
-            })
-        ))
+        setTimeout(() => {
+            gameBtns.forEach((button =>
+                button.addEventListener('click', function (e) {
+                    if (button.dataset.answer === questions[currentQuestion].answer) {
+                        /* increase score by 1 if the user clicks the correct answer */
+                        score++;
+                        console.log(name, "score is", score)
+                        correct();
+                    } else {
+                        incorrect();
+                    }
+                    currentQuestion++;
 
-        timer();
+                    setTimeout(() => {
+                        showQuestion();
+                    }, 500);
 
+
+                })
+            ))
+
+            timer();
+
+
+        }, 500);
 
     }
-
 }
 
 
@@ -986,7 +997,7 @@ function incorrect() {
 
 
 
-function endGame() {
+function endGame(fscore) {
     console.log("game ended");
     questionsContainer.style.display = "none";
     showResults();
