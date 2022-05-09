@@ -709,8 +709,8 @@ const questions = [{
 ];
 
 
-
-let highScores = [{
+/* high score 
+let highScoresArray = [{
         highscoreName: "Harry",
         highscoreNumber: "17"
     },
@@ -736,6 +736,8 @@ let highScores = [{
     },
 ];
 
+*/
+
 const nContainer = document.getElementById("start-contain");
 const qContainer = document.getElementById("quiz-container");
 const questionsContainer = document.getElementById('question-container');
@@ -745,14 +747,13 @@ let optionA = document.getElementById("answer-a");
 let optionB = document.getElementById("answer-b");
 let optionC = document.getElementById("answer-c");
 let scoreText = document.getElementById("score");
-
+const highscoresTable = document.getElementById("highscores");
 const startBtn = document.getElementById("begin");
 let currentQuestion = 0;
 let score = 0;
 const maxQuestions = 10;
 let userName = document.getElementById("name");
 let gameBtns = Array.from(document.getElementsByClassName('game-button'));
-let nameInput = document.getElementById
 let usernameInput;
 
 /* correct animation */
@@ -799,8 +800,32 @@ const overlay = document.getElementById("overlay");
 
 /* leaderboard */
 
-let latestScore = score.valueOf();
-const highscoresTable = document.getElementById("highscores");
+const mostRecentScore = localStorage.getItem('mostRecentScore');
+scoreText.innerText = mostRecentScore;
+
+
+
+
+
+/*
+
+const numberOfHighscores = 5;
+const HIGH_SCORES = 'highScores';
+const newScore = {
+    score,
+    usernameInput
+};
+
+const highScoreString = localStorage.getItem(HIGH_SCORES);
+const highScores = JSON.parse(highScoreString) ? ? [];
+const lowestScore = highScores[numberOfHighscores - 1] ? .score ? ? 0;
+
+*/
+
+
+
+
+
 
 
 
@@ -911,33 +936,31 @@ function startQuiz(type) {
             })
         ))
     } else {
-        setTimeout(() => {
-            gameBtns.forEach((button =>
-                button.addEventListener('click', function (e) {
-                    if (button.dataset.answer === questions[currentQuestion].answer) {
-                        /* increase score by 1 if the user clicks the correct answer */
-                        score++;
-                        console.log(name, "score is", score)
-                        correct();
-                    } else {
-                        incorrect();
-                    }
-                    currentQuestion++;
+        gameBtns.forEach((button =>
+            button.addEventListener('click', function (e) {
+                if (button.dataset.answer === questions[currentQuestion].answer) {
+                    /* increase score by 1 if the user clicks the correct answer */
+                    score++;
+                    console.log(name, "score is", score)
+                    correct();
+                } else {
+                    incorrect();
+                }
+                currentQuestion++;
 
-                    setTimeout(() => {
-                        showQuestion();
-                    }, 500);
-
-
-                })
-            ))
-
-            timer();
+                setTimeout(() => {
+                    showQuestion();
+                }, 500);
 
 
-        }, 500);
+            })
+        ))
+
+        timer();
+
 
     }
+
 }
 
 
@@ -997,31 +1020,79 @@ function incorrect() {
 
 
 
-function endGame(fscore) {
+
+function endGame() {
     console.log("game ended");
     questionsContainer.style.display = "none";
     showResults();
     console.log(questions);
     return score;
 
+
+
+
 }
 
 
+
 function showResults() {
+
 
     console.log("score should be revealed")
     scoreCard.style.display = "flex";
     document.getElementById('score').innerText = `${usernameInput} scored:  ${score} `;
     startAgainButton.innerText = "TRY AGAIN?";
     highscoresTable.style.display = "block";
+    localStorage.setItem('mostRecentScore', score);
 
 
 }
 
+/*
+
 function sortScores() {
-    for (let i = 0; i < highScores.length; i++)
-        for (let j = 0; j < document.getElementsByTagName("td").length; i++) {
-            j[0].innerText = i[0].value;
+    for (let i = 0; i < highScores.length; i++) {
+        let data = document.getElementsByTagName("td");
+        data.innerText = i[0]++;
+
+    }
+}
+
+
+/*
+
+function checkHighScore(score) {
+    const highScores = JSON.parse(localStorage.getItem(HIGH_SCORES)) ? ? [];
+    const lowestScore = highScores[numberOfHighscores - 1] ? .score ? ? 0;
+
+    if (score > lowestScore) {
+        saveHighScore(score, highScores);
+        showHighScores();
+    }
+}
+
+function saveHighScore(score, highScores) {
+    
+    const newScore = { score, usernameInput };
+    
+    // 1. Add to list
+    highScores.push(newScore);
+  
+    // 2. Sort the list
+    highScores.sort((a, b) => b.score - a.score);
+    
+    // 3. Select new list
+    highScores.splice(numberOfHighscores);
+    
+    // 4. Save to local storage
+    localStorage.setItem(HIGH_SCORES, JSON.stringify(highScores));
+  };
+
+
+
+
+/*for (let j = 0; j < document.getElementsByTagName("td").length; i++) {
+            j[0].innerText = `${i[0].value}`;
             j[1].innerText = i[1].value;
 
         }
@@ -1034,6 +1105,8 @@ function sortScores() {
         }];
     }
 }
+*/
+
 
 
 
