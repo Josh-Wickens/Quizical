@@ -162,10 +162,12 @@ let timedGame = document.getElementById('submit-timed')
 let startAgainButton = document.getElementById("start-again");
 startAgainButton.addEventListener('click', startAgain);
 startNormal.addEventListener('click', function () {
+
     startQuiz('normal')
     usernameInput = document.getElementById('name').value
 }, false);
 timedGame.addEventListener('click', function () {
+
     startQuiz('timed')
     usernameInput = document.getElementById('name').value
 }, false);
@@ -324,20 +326,20 @@ function saveHighScore() {
 
 
     // highScoresList.innerHTML = highScores.map(score => {
-        /*return `<tr><td>${score.name}</td><td>${score.score}</td></tr>`;*/
+    /*return `<tr><td>${score.name}</td><td>${score.score}</td></tr>`;*/
 
-        
+
 
     // })
 
     // const league = highScores.map(score => {
-            // for (let score = 0; score < highScores.length; score++) {
-            //     highScoresList.innerHTML += `<tr><td>${highScores[score].name}</td><td>${highScores[score].score}</td></tr>`;
-            // }
-            /*return `<ul><li>${score.name}${score.score}</li></ul>`;*/
+    // for (let score = 0; score < highScores.length; score++) {
+    //     highScoresList.innerHTML += `<tr><td>${highScores[score].name}</td><td>${highScores[score].score}</td></tr>`;
+    // }
+    /*return `<ul><li>${score.name}${score.score}</li></ul>`;*/
 
-        // })
-        // .join('');
+    // })
+    // .join('');
 
 };
 

@@ -23,7 +23,7 @@
     </div>
 
     <div id="site-info">
-        <h2>The Harry Potter Quiz <i class="fa-solid fa-bolt"></i></h2>
+        <h2><i class="fa-solid fa-bolt"></i>The Harry Potter Quiz <i class="fa-solid fa-bolt"></i></h2>
     </div>
 
     <!--This is the modal, it will appear once the player presses the start button and will make the user submit a name-->
@@ -36,8 +36,10 @@
         <div id="name-input">
             <label for="name">insert name</label>
             <input type="text" placeholder='"Quiz Master"' name="name" class="input-text" id="name" required>
-            <button type="submit" class="button" id="submit-normal" data-close-button Submit>Start Normal Game</button>
-            <button type="submit" class="button" id="submit-timed" data-close-button Submit>Start Timed Game</button>
+            <button class=" button" id="submit-normal" data-close-button>Start Normal
+                Game</button>
+            <button class="button" id="submit-timed" data-close-button>Start Timed
+                Game</button>
         </div>
     </div>
 
@@ -74,8 +76,9 @@
                 <p><span id="score">0</span></p>
             </div>
             <div class="leaderboard" id="highscores">
+                <h3>HIGH SCORES</h3>
                 <table>
-                    <thead>HIGH SCORES</thead>
+
                     <tr>
                         <th>Name</th>
                         <th>Score</th>
