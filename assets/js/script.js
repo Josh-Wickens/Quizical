@@ -811,12 +811,6 @@ const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
 const highScoresList = document.getElementById("highscores-rows");
 
-
-
-
-
-
-
 /* DOM loaded event listener and quiz loaded */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -844,7 +838,6 @@ closeModalBtn.forEach(button => {
     })
 })
 
-
 /* Modal Function */
 
 function openModal(modal) {
@@ -868,10 +861,6 @@ function closeModal() {
     qContainer.style.display = "block";
 }
 
-
-
-
-
 let quizTimer;
 let startNormal = document.getElementById("submit-normal");
 let timedGame = document.getElementById('submit-timed')
@@ -886,20 +875,9 @@ timedGame.addEventListener('click', function () {
     usernameInput = document.getElementById('name').value
 }, false);
 
-
-
-
-
-
-
-
-
-
-
 /* Start quiz function and running the quiz on gametype */
 
 function startQuiz(type) {
-
 
     scoreText = 0;
     shuffleQuestions();
