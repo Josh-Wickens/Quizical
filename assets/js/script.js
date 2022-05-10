@@ -212,7 +212,6 @@ function startQuiz(type) {
                 if (button.dataset.answer === questions[currentQuestion].answer) {
                     /* increase score by 1 if the user clicks the correct answer */
                     score++;
-                    console.log(name, "score is", score)
                     correct();
                 } else {
                     incorrect();
@@ -317,15 +316,28 @@ function saveHighScore() {
 
     localStorage.setItem('highScores', JSON.stringify(highScores));
 
-    highScoresList.innerHTML = highScores.map(score => {
-        return `<tr><td>${score.name}</td><td>${score.score}</td></tr>`;
-    })
 
-    const league = highScores.map(score => {
-            return `<tr><td>${score.name}</td><td>${score.score}</td></tr>`;
 
-        })
-        .join('');
+    for (let score = 0; score < highScores.length; score++) {
+        highScoresList.innerHTML += `<tr><td>${highScores[score].name}</td><td>${highScores[score].score}</td></tr>`;
+    }
+
+
+    // highScoresList.innerHTML = highScores.map(score => {
+        /*return `<tr><td>${score.name}</td><td>${score.score}</td></tr>`;*/
+
+        
+
+    // })
+
+    // const league = highScores.map(score => {
+            // for (let score = 0; score < highScores.length; score++) {
+            //     highScoresList.innerHTML += `<tr><td>${highScores[score].name}</td><td>${highScores[score].score}</td></tr>`;
+            // }
+            /*return `<ul><li>${score.name}${score.score}</li></ul>`;*/
+
+        // })
+        // .join('');
 
 };
 
