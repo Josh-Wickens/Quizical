@@ -769,6 +769,8 @@ const correctAniStart = [{
     },
 ];
 
+/* incorrect animation */
+
 const incorrectAniStart = [{
         backgroundColor: "rgba(12, 6, 6, 0.534)"
     },
@@ -779,6 +781,8 @@ const incorrectAniStart = [{
         backgroundColor: "rgba(12, 6, 6, 0.534)"
     },
 ];
+
+/* animation timing */
 
 const aniTiming = {
     duration: 250,
@@ -798,7 +802,7 @@ const openModalBtn = document.querySelectorAll('[data-modal-target]');
 const closeModalBtn = document.querySelectorAll('[data-close-button]');
 const overlay = document.getElementById("overlay");
 
-/* leaderboard */
+/* leaderboard variables */
 
 const mostRecentScore = localStorage.getItem('mostRecentScore');
 scoreText.innerText = mostRecentScore;
@@ -807,18 +811,24 @@ const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
 const highScoresList = document.getElementById("highscores-rows");
 
-highScoresList.innerHTML = highScores.map(score => {
-    return `<tr>
-        <td>${score.name}</td>
-        <td>${score.score}</td>
-        </tr>`;
-})
+
 
 
 
 
 
 /* DOM loaded event listener and quiz loaded */
+
+document.addEventListener("DOMContentLoaded", function () {
+    quizLoaded();
+});
+
+function quizLoaded() {
+    nContainer.style.display = "flex";
+
+}
+
+/* Modal event listeners to open and close using querySelectors on the buttons.*/
 
 openModalBtn.forEach(button => {
     button.addEventListener('click', () => {
@@ -833,32 +843,7 @@ closeModalBtn.forEach(button => {
         closeModal(modal);
     })
 })
-let quizTimer;
-let startNormal = document.getElementById("submit-normal");
-let timedGame = document.getElementById('submit-timed')
-let startAgainButton = document.getElementById("start-again");
-startAgainButton.addEventListener('click', startAgain);
-startNormal.addEventListener('click', function () {
-    startQuiz('normal')
-    usernameInput = document.getElementById('name').value
-}, false);
-timedGame.addEventListener('click', function () {
-    startQuiz('timed')
-    usernameInput = document.getElementById('name').value
-}, false);
-document.addEventListener("DOMContentLoaded", function () {
-    console.log("1st load");
-    quizLoaded();
-});
 
-
-function quizLoaded() {
-    nContainer.style.display = "flex";
-    console.log("hello world");
-
-}
-
-/* Modal Event Listeners */
 
 /* Modal Function */
 
@@ -885,7 +870,33 @@ function closeModal() {
 
 
 
-/* Start quiz function */
+
+
+let quizTimer;
+let startNormal = document.getElementById("submit-normal");
+let timedGame = document.getElementById('submit-timed')
+let startAgainButton = document.getElementById("start-again");
+startAgainButton.addEventListener('click', startAgain);
+startNormal.addEventListener('click', function () {
+    startQuiz('normal')
+    usernameInput = document.getElementById('name').value
+}, false);
+timedGame.addEventListener('click', function () {
+    startQuiz('timed')
+    usernameInput = document.getElementById('name').value
+}, false);
+
+
+
+
+
+
+
+
+
+
+
+/* Start quiz function and running the quiz on gametype */
 
 function startQuiz(type) {
 
@@ -952,7 +963,7 @@ function startQuiz(type) {
 
 
 
-/* show question function to pick a random question from the array of questions */
+/* show question function to display the question and answers in the quiz area */
 
 
 function showQuestion() {
@@ -964,17 +975,12 @@ function showQuestion() {
     optionC.innerText = q.choiceC;
 }
 
-/* function for if the user clicks the start again button. Should restart the quiz from the beginning */
+/* function for if the user clicks the start again button. Should restart the quiz and browser */
 
 function startAgain() {
     window.location.reload();
 
 }
-
-
-/* function to check if the user has selected the right answer */
-
-
 
 
 /* function if the user selects the right or wrong answer */
@@ -994,8 +1000,6 @@ function incorrect() {
 }
 
 /*function to end the quiz and show the results for that quiz */
-
-
 
 
 function endGame() {
@@ -1042,6 +1046,13 @@ function saveHighScore() {
 
 
 };
+
+highScoresList.innerHTML = highScores.map(score => {
+    return `<tr>
+        <td>${score.name}</td>
+        <td>${score.score}</td>
+        </tr>`;
+})
 
 
 
