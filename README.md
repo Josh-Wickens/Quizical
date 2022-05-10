@@ -10,7 +10,7 @@ I am a Harry Potter fan and I would love to see how much I really know. This web
 ___
 ## **Features** ##
 ___
-### **Opening Page** ###
+### **Opening Screen** ###
 The opening page has the website name at the very top of the page so that it stands out the most. This will stay there on the site throughout. The intro line gives the user an instant insite as to what the quiz is about.
 
 ![screenshot of website heading/logo with the brief insite to what the quiz is about](assets/images/heading-ss.png)
@@ -20,10 +20,15 @@ The opening page is set so that it looks like the portal to a game. The circle i
 - start button will change colour when hovered over so that the user knows that it is interactable. 
 - curser will also change shape to a pointer to indicate that it is interactable too.
 
-![screenshot of website heading/logo with the brief insight to what the quiz is about](assets/images/enter-quiz-ss.png)
+![screenshot of start button on opening screen](assets/images/enter-quiz-ss.png)
 
 The background looks like the mauraders map in Harry Potter 
 - help the user identify what the quiz is about.
+
+### **Modal** ###
+The modal provides the user with the different game buttons. Depending on what game they chose to play the corresponding game will load. Modal also give the user an explanation as to what each quiz does.
+
+
 
 
  

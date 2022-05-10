@@ -22,6 +22,11 @@ i {
     text-shadow: 2px 2px 5px lightgoldenrodyellow;
 }
 
+
+button[disabled] {
+    background-color: red;
+}
+
 #logo {
     font-family: 'orelega one', cursive;
     font-size: 200%;
@@ -87,7 +92,7 @@ i {
 }
 
 .button:hover {
-    background-color: grey;
+    background-color: gold;
 }
 
 
