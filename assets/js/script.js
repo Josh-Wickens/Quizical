@@ -317,17 +317,16 @@ function saveHighScore() {
 
     localStorage.setItem('highScores', JSON.stringify(highScores));
 
-    console.log(highScores);
-
     highScoresList.innerHTML = highScores.map(score => {
         return `<tr><td>${score.name}</td><td>${score.score}</td></tr>`;
     })
 
     const league = highScores.map(score => {
-        return `<tr><td>${score.name}</td><td>${score.score}</td></tr>`;
+            return `<tr><td>${score.name}</td><td>${score.score}</td></tr>`;
 
-    })
-    console.log(league);
+        })
+        .join('');
+
 };
 
 
