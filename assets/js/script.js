@@ -116,6 +116,16 @@ function quizLoaded() {
 
 }
 
+userName.addEventListener("click", clearFields)
+
+function clearFields() {
+
+    userName.value = "";
+
+
+};
+
+
 /* Modal event listeners to open and close using querySelectors on the buttons.*/
 
 openModalBtn.forEach(button => {
@@ -130,7 +140,7 @@ closeModalBtn.forEach(button => {
         const modal = button.closest(".modal")
         closeModal(modal);
     })
-})
+});
 
 /* Modal Function */
 
@@ -144,17 +154,16 @@ function openModal(modal) {
 
 function closeModal() {
     if (modal == null || userName.value === "") {
-        startNormal = disabled;
-        timedGame = disabled;
 
+        userName.value = "New Player";
 
-    } else {
         modal.classList.remove('active');
         overlay.classList.remove('active');
+
+        nContainer.style.display = "none";
+        qContainer.style.display = "block";
     }
-    nContainer.style.display = "none";
-    qContainer.style.display = "block";
-}
+};
 
 let quizTimer;
 let startNormal = document.getElementById("submit-normal");
@@ -180,8 +189,6 @@ function startQuiz(type) {
     shuffleQuestions();
     showQuestion();
 
-
-    console.log(type)
     if (type === 'normal') {
         gameBtns.forEach((button =>
             button.addEventListener('click', function (e) {
@@ -296,7 +303,7 @@ function showResults() {
     scoreCard.style.display = "flex";
     document.getElementById('score').innerText = `${usernameInput} scored:  ${score} `;
     startAgainButton.innerText = "TRY AGAIN?";
-    highscoresTable.style.display = "block";
+    highscoresTable.style.display = "flex";
     localStorage.setItem('mostRecentScore', score);
     saveHighScore();
 
