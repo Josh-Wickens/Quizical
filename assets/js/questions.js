@@ -701,7 +701,7 @@ const questions = [{
     },
 
 ];
-
+//export the questions to the javascript page holding the function for the questions.
 export {
     questions
 };

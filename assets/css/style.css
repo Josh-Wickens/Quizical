@@ -9,7 +9,6 @@
 body {
     background: url(../images/quiz-background.png) no-repeat center center fixed;
     background-size: cover;
-
 }
 
 p {
@@ -21,7 +20,6 @@ i {
     color: gold;
     text-shadow: 2px 2px 5px lightgoldenrodyellow;
 }
-
 
 button[disabled] {
     background-color: red;
@@ -88,20 +86,17 @@ button[disabled] {
     font-size: 125%;
     padding: 10px;
     cursor: pointer;
-
 }
 
 .button:hover {
     background-color: gold;
 }
 
-
 #under-game {
     display: flex;
     justify-content: space-evenly;
     width: 100vw;
     margin-top: 20px;
-
 }
 
 #score-area {
@@ -110,7 +105,6 @@ button[disabled] {
     color: whitesmoke;
     display: none;
     border: black 4px solid;
-
 }
 
 #start-contain {
@@ -128,7 +122,6 @@ button[disabled] {
     align-items: center;
     align-self: center;
     margin-top: 50px;
-
 }
 
 #quiz-container {
@@ -138,7 +131,6 @@ button[disabled] {
 #clock-contain {
     font-size: 150%;
     text-shadow: 2px 2px 2px lightgoldenrodyellow;
-
     display: flex;
     justify-content: center;
     font-family: 'arimo', sans-serif;
@@ -177,7 +169,6 @@ button[disabled] {
     font-family: 'kanit', sans-serif;
     font-weight: 900;
     contain: content;
-
 }
 
 #name-input {
@@ -190,11 +181,6 @@ button[disabled] {
 label {
     font-family: 'arimo', sans-serif;
     text-transform: uppercase;
-
-}
-
-input[type="radio"] {
-    margin-right: 5px;
 }
 
 .input-text {
@@ -213,7 +199,6 @@ input[type="radio"] {
     bottom: 0;
     background-color: rgb(0, 0, 128, .5);
     pointer-events: none;
-
 }
 
 #overlay.active {
@@ -235,8 +220,6 @@ input[type="radio"] {
     padding: 0 10px;
     flex-direction: column;
     align-items: center;
-
-
 }
 
 table {
@@ -245,12 +228,9 @@ table {
     height: 90%;
 }
 
-
-thead,
 th,
 td {
     border: 2px lightgoldenrodyellow solid;
-
 }
 
 td {
@@ -277,7 +257,6 @@ th {
     }
 }
 
-
 /* for screen sizes 420px and down */
 
 @media screen and (max-width: 420px) {
@@ -293,6 +272,4 @@ th {
     #site-info {
         font-size: 5vw;
     }
-
-
 }
