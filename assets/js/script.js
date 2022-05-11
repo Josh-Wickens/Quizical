@@ -25,6 +25,7 @@ let quizTimer;
 let startNormal = document.getElementById("submit-normal");
 let timedGame = document.getElementById('submit-timed');
 let startAgainButton = document.getElementById("start-again");
+let clear = document.getElementById("clear");
 
 //Timer Variables 
 
@@ -288,6 +289,13 @@ function shuffleQuestions() {
         questions[newPos] = temp;
     }
     return questions;
+}
+
+clear.addEventListener("click", clearFunction);
+
+function clearFunction() {
+    window.localStorage.clear();
+    highscoresTable.style.display = "none";
 }
 
 //timer function will stop once the count reaches 0 and run the endgame function for the timed game. 

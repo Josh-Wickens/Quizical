@@ -33,10 +33,36 @@ The modal provides the user with the different game buttons. Depending on what g
 - buttons will turn yellow and curser will change to a pointer. This will show the user that the buttons are clickable.
 - modal will display in the centre and will cause the behind background to change transparancy so that the users attention will be drawn to the modal.
 - text input area gives the oppotunity to pick a desired name for them to play as. Harry Potter is put in there by default in case the user forgets to put a name.
-- if user puts nothing in the input then a name will be saved for them (player 1), this will stop any delay to the game in case the user just wants to play the quiz and not bothered about saving a name.
-- information is given to the user at this point so that they decide what game type they would like to play.
+- if user puts nothing in the input then a name will be saved for them (player 1), this will stop any delay to the game in case the user just wants to play the quiz and not bothered about saving a name, this javascipt will make it userfriendly for both types of users who want to play.
+- username has a limit to the amount of characters to make the leaderboard display more user friendly as it will fit the given container.
+- information is given to the user at this point so that they decide what game type they would like to play, rather than trying to figure out what each one does.
 
 ![screen shot of buttons turning yellow](assets/images/button-ss.png)
+
+### **Questions and Answers** ###
+
+Once the gametype the user wants to play has been selected the quiz questions will appear. The questions are displayed on top so the user will read that first then the answer options are displayed below in the same format as all previous buttons so that the user "knows the drill".
+
+- normal gametype will display just the questions and answers
+
+![screen shot of normal gametype](assets/images/questions-ss.png)
+
+- timed game displays a timer above the questions so that the user knows how long they have.
+
+![screen shot of timed gametype](assets/images/timed-ss.png)
+
+### **end game** ###
+
+At the end of the quiz, the users score for that game will be displayed, along with a leaderboard. The leaderboard has space for 5 scores. If the user beats the scores that are already there, then the lowest will be taken off. 
+
+- the chosen name for the user and their score is displayed at the top right. If the user doesn't beat the highscore, they can still see how they have done. 
+- try again button is displayed so that the user gets the chance to try again or pass the quiz to their friend to see if they can beat their score.
+
+
+
+
+
+
 
 
 
