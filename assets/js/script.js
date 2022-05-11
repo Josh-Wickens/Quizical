@@ -1,4 +1,4 @@
-// questions are saved to a seperate javascipt page and imported here.
+//questions are saved to a seperate javascipt page and imported here.
 
 import {
     questions
@@ -26,22 +26,22 @@ let startNormal = document.getElementById("submit-normal");
 let timedGame = document.getElementById('submit-timed');
 let startAgainButton = document.getElementById("start-again");
 
-// Timer Variables 
+//Timer Variables 
 
 let clock = document.getElementById("timer-clock");
 let count = 60;
 
-// Modal variables 
+//Modal variables 
 const openModalBtn = document.querySelectorAll('[data-modal-target]');
 const closeModalBtn = document.querySelectorAll('[data-close-button]');
 const overlay = document.getElementById("overlay");
 
-// leaderboard variables 
+//leaderboard variables 
 
 const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 const highScoresList = document.getElementById("highscores-rows");
 
-// correct animation 
+//correct animation 
 
 const correctAniStart = [{
         backgroundColor: "rgba(12, 6, 6, 0.534)"
@@ -54,7 +54,7 @@ const correctAniStart = [{
     },
 ];
 
-// incorrect animation 
+//incorrect animation 
 
 const incorrectAniStart = [{
         backgroundColor: "rgba(12, 6, 6, 0.534)"
@@ -67,14 +67,14 @@ const incorrectAniStart = [{
     },
 ];
 
-// animation timing 
+//animation timing 
 
 const aniTiming = {
     duration: 250,
     iterations: 1,
 };
 
-/* DOM loaded event listener and quiz loaded */
+//DOM loaded event listener and quiz loaded 
 
 document.addEventListener("DOMContentLoaded", function () {
     quizLoaded();
@@ -84,7 +84,7 @@ function quizLoaded() {
     nContainer.style.display = "flex";
 }
 
-// function to empty the userinput for name once it has been clicked on to save user deleting content each time
+//function to empty the userinput for name once it has been clicked on to save user deleting content each time
 
 userName.addEventListener("click", clearFields);
 
@@ -93,7 +93,7 @@ function clearFields() {
     userName.value = "";
 }
 
-/* Modal event listeners to open and close using querySelectors on the buttons.*/
+//Modal event listeners to open and close using querySelectors on the buttons.
 
 openModalBtn.forEach(button => {
     button.addEventListener('click', () => {
@@ -109,7 +109,7 @@ closeModalBtn.forEach(button => {
     });
 });
 
-/* Modal Function will open the modal and set the username input with a prefilled value*/
+//Modal Function will open the modal and set the username input with a prefilled value
 
 function openModal(modal) {
     if (modal == null) return;
@@ -117,9 +117,10 @@ function openModal(modal) {
     overlay.classList.add('active');
     userName.value = "Harry Potter";
 }
+/* Modal Function will close the modal. 
+If the username has left the name input blank, then the value will be New Player then show display the quiz,
+if it is filled, then it will just display the quiz*/
 
-// Modal Function will close the modal. If the username has left the name input blank, then the value will be New Player then show display the quiz,
-//if it is filled, then it will just display the quiz
 function closeModal() {
     if (modal == null || userName.value === "") {
 
@@ -167,7 +168,7 @@ function startQuiz(type) {
         gameBtns.forEach((button =>
             button.addEventListener('click', function (e) {
                 if (button.dataset.answer === questions[currentQuestion].answer) {
-                    /* increase score by 1 if the user clicks the correct answer */
+                    //increase score by 1 if the user clicks the correct answer 
                     score++;
                     correct();
                 } else {
@@ -175,11 +176,11 @@ function startQuiz(type) {
                 }
                 //after each question it will provide a new one by incrementing/moving to the next one in the array
                 currentQuestion++;
-                // the questions will have a slight delay to allow the change of colour animation to take place.
+                //the questions will have a slight delay to allow the change of colour animation to take place.
                 setTimeout(() => {
                     showQuestion();
                 }, 500);
-                // for the normal type game, it will run until it has reached its max questions (as set by the variable above) then run the end game function.
+                //for the normal type game, it will run until it has reached its max questions (as set by the variable above) then run the end game function.
                 if (currentQuestion >= maxQuestions) {
                     endGame();
                 }
@@ -190,7 +191,7 @@ function startQuiz(type) {
         gameBtns.forEach((button =>
             button.addEventListener('click', function (e) {
                 if (button.dataset.answer === questions[currentQuestion].answer) {
-                    /* increase score by 1 if the user clicks the correct answer */
+                    //increase score by 1 if the user clicks the correct answer */
                     score++;
                     correct();
                 } else {
@@ -202,14 +203,15 @@ function startQuiz(type) {
                 }, 500);
             })
         ));
-        // the timer function has a end game function once it reaches 0. So this function will keep running until the timer function reaches 0 and ends the game.
+        /*the timer function has a end game function once it reaches 0. 
+        So this function will keep running until the timer function reaches 0 and ends the game.*/
         timer();
     }
 }
 
 
 
-/* show question function to display the question and answers in the quiz area */
+//show question function to display the question and answers in the quiz area 
 
 function showQuestion() {
 
@@ -220,15 +222,14 @@ function showQuestion() {
     optionC.innerText = q.choiceC;
 }
 
-/* function for if the user clicks the start again button. Should restart the quiz and browser */
+//function for if the user clicks the start again button. Should restart the quiz and browser 
 
 startAgainButton.addEventListener('click', startAgain);
 
 function startAgain() {
     window.location.reload();
 }
-
-/* function if the user selects the right or wrong answer */
+//function if the user selects the right or wrong answer 
 
 function correct() {
     questionsContainer.animate(correctAniStart, aniTiming);
@@ -237,9 +238,7 @@ function correct() {
 function incorrect() {
     questionsContainer.animate(incorrectAniStart, aniTiming);
 }
-
-/*function to end the quiz and show the results for that quiz */
-
+//function to end the quiz and show the results for that quiz 
 
 function endGame() {
     questionsContainer.style.display = "none";
@@ -248,25 +247,23 @@ function endGame() {
 }
 
 function showResults() {
-
     scoreCard.style.display = "flex";
     document.getElementById('score').innerText = `${usernameInput} scored:  ${score} `;
     startAgainButton.innerText = "TRY AGAIN?";
     highscoresTable.style.display = "flex";
     localStorage.setItem('mostRecentScore', score);
     saveHighScore();
-
 }
-
 // get the mostRecent score from the local storage and put into the score const as score and the username is used as the name value.
+
 function saveHighScore() {
     const mostRecentScore = localStorage.getItem('mostRecentScore');
     const score = {
         score: mostRecentScore,
         name: usernameInput
     };
-
     // add the score to the array, then sort them into numerical order. We will then splice the top 5 (get rid of the rest of the array) and turn the highscores into a string.
+
     highScores.push(score);
     highScores.sort((a, b) => b.score - a.score);
     highScores.splice(5);
@@ -293,7 +290,7 @@ function shuffleQuestions() {
     return questions;
 }
 
-/* timer function will stop once the count reaches 0 and run the endgame function for the timed game. */
+//timer function will stop once the count reaches 0 and run the endgame function for the timed game. 
 
 function timer() {
     clock.innerText = count;
