@@ -291,6 +291,7 @@ function shuffleQuestions() {
     return questions;
 }
 
+//function to clear the scores for the highscores table
 clear.addEventListener("click", clearFunction);
 
 function clearFunction() {

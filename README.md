@@ -58,6 +58,14 @@ At the end of the quiz, the users score for that game will be displayed, along w
 - the chosen name for the user and their score is displayed at the top right. If the user doesn't beat the highscore, they can still see how they have done. 
 - try again button is displayed so that the user gets the chance to try again or pass the quiz to their friend to see if they can beat their score.
 
+![screen shot top of results page with try again and recent score](assets/images/recent-score-ss.png)
+
+- a clear score button is provided so if the user wants to clear all previous highscores they can and start adding new scores to the table.
+
+![screen shot top of results page with try again and recent score](assets/images/highscores-ss.png)
+
+
+
 
 
 
