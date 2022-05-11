@@ -21,10 +21,6 @@ i {
     text-shadow: 2px 2px 5px lightgoldenrodyellow;
 }
 
-button[disabled] {
-    background-color: red;
-}
-
 #logo {
     font-family: 'orelega one', cursive;
     font-size: 200%;
@@ -86,11 +82,16 @@ button[disabled] {
     font-size: 125%;
     padding: 10px;
     cursor: pointer;
+    color: black;
 }
 
-.button:hover {
-    background-color: gold;
+
+@media(hover: hover) and (pointer: fine) {
+    nav a:hover {
+        background-color: gold;
+    }
 }
+
 
 #under-game {
     display: flex;
@@ -232,6 +233,7 @@ table {
 th,
 td {
     border: 2px lightgoldenrodyellow solid;
+    max-height: 50px;
 }
 
 td {
@@ -250,6 +252,7 @@ th {
     .button {
         width: auto;
         min-width: 200px;
+
     }
 
     #start-again {

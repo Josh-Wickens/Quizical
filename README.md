@@ -77,6 +77,28 @@ ___
 - a choice of quiz topics.
 - video clips from the movie where users can answer questions like 'what does Harry say next?'
 
+## **Testing** ##
+___
+
+I created media queries so that no matter the width size, with that being a phone size, latop size or even just minimised widths of a computer screen; the code will cause the website to be responsive so that all elements are responsive to that width or height. Most of my div contianers are in flex display, so they will be responsive to the screen size
+
+### **Media Queries** ###
+
+- the buttons width will change depending on the screen size. They need to be smaller as they would no longer fit in their container.
+- the quiz container width was made bigger and setting it to 100% so that the quiz question could fit in the container no matter the screen size.
+- the font size for the headers were reduced so that they didn't take more space than the rest of the content.
+
+### **Validators** ###
+- Validator passed for html w3c validator - no errors
+- Validator passed for css official (jigsaw) validator - no errors
+- Validator passed for javascript validater (jshint) - no errors
+___
+
+## **Bugs** ##
+
+
+
+
 
 
 
