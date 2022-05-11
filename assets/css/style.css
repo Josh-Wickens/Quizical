@@ -87,7 +87,7 @@ i {
 
 
 @media(hover: hover) and (pointer: fine) {
-    nav a:hover {
+    .button:hover {
         background-color: gold;
     }
 }
@@ -188,8 +188,9 @@ label {
 .input-text {
     background-color: black;
     color: beige;
-    height: 1.25rem;
+    height: 2.5rem;
     text-align: center;
+    font-size: 20px;
 }
 
 #overlay {
