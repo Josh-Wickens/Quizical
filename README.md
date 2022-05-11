@@ -90,6 +90,8 @@ I created media queries so that no matter the width size, with that being a phon
 - the quiz container width was made bigger and setting it to 100% so that the quiz question could fit in the container no matter the screen size.
 - the font size for the headers were reduced so that they didn't take more space than the rest of the content.
 
+![screen shot of quiz displaying correctly on movile](assets/images/responsive-ss.png)
+
 ### **Validators** ###
 - Validator passed for html w3c validator - no errors
 - Validator passed for css official (jigsaw) validator - no errors
@@ -103,7 +105,8 @@ ___
 - button text colour was coming out blue instead of black on a mobile device. Changed the text colour for the class to black to fix.
 - had a bug on the modal. I set an event listener to the game mode buttons to start the timer if the timed game button was selected. But I also had a required element on the input box and buttons were set to disable until a name was inserted. But the if they clicked the timed game button when it was disabled, it would still start the timer and not close the modal. So i set a default name for the input if a name wasn't selected and got rid of the disabled buttons.
 - questions were displaying to fast for the correct and wrong answer css. The container would display red for incorrect and green for correct. But the question was changing to the next one before it would finish. So i set a animation function with a timedelay to the change question function to give it time to finish it's animation.
-
+- the lighthouse test showed that performance was lower than other scores. The advice it game was to change the images to a webp, but that made the performance worse.
+![screen shot top of results page with try again and recent score](assets/images/lighthouse-ss.png)
 ___
 
 ## **Deployment** ##
