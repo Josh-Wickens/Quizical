@@ -1,36 +1,8 @@
+// questions are saved to a seperate javascipt page and imported here.
+
 import {
     questions
 } from "./questions.js";
-
-
-/* high score 
-let highScoresArray = [{
-        highscoreName: "Harry",
-        highscoreNumber: "17"
-    },
-
-    {
-        highscoreName: "Ron",
-        highscoreNumber: "13"
-    },
-
-    {
-        highscoreName: "Hermione",
-        highscoreNumber: "21"
-    },
-
-    {
-        highscoreName: "Dumbledore",
-        highscoreNumber: "28"
-    },
-
-    {
-        highscoreName: "Draco",
-        highscoreNumber: "11"
-    },
-];
-
-*/
 
 //general variables
 
@@ -155,7 +127,6 @@ function closeModal() {
 
         modal.classList.remove('active');
         overlay.classList.remove('active');
-
         nContainer.style.display = "none";
         qContainer.style.display = "block";
     }
@@ -201,25 +172,19 @@ function startQuiz(type) {
                     correct();
                 } else {
                     incorrect();
-
                 }
-
                 //after each question it will provide a new one by incrementing/moving to the next one in the array
-
                 currentQuestion++;
                 // the questions will have a slight delay to allow the change of colour animation to take place.
                 setTimeout(() => {
                     showQuestion();
                 }, 500);
-
-
                 // for the normal type game, it will run until it has reached its max questions (as set by the variable above) then run the end game function.
                 if (currentQuestion >= maxQuestions) {
                     endGame();
                 }
             })
         ));
-
         //otherwise the user has selected the timed game option it will do the exact same thing as the normal game function except it will run the timer function.
     } else {
         gameBtns.forEach((button =>
@@ -232,20 +197,14 @@ function startQuiz(type) {
                     incorrect();
                 }
                 currentQuestion++;
-
                 setTimeout(() => {
                     showQuestion();
                 }, 500);
-
-
             })
         ));
-
-        timer();
         // the timer function has a end game function once it reaches 0. So this function will keep running until the timer function reaches 0 and ends the game.
-
+        timer();
     }
-
 }
 
 
@@ -317,7 +276,6 @@ function saveHighScore() {
     for (let score = 0; score < highScores.length; score++) {
         highScoresList.innerHTML += `<tr><td>${highScores[score].name}</td><td>${highScores[score].score}</td></tr>`;
     }
-
 }
 
 /* function to shuffle the order of questions using fisher-yates algorithm 
@@ -335,10 +293,7 @@ function shuffleQuestions() {
     return questions;
 }
 
-
-
 /* timer function will stop once the count reaches 0 and run the endgame function for the timed game. */
-
 
 function timer() {
     clock.innerText = count;

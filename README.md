@@ -26,7 +26,22 @@ The background looks like the mauraders map in Harry Potter
 - help the user identify what the quiz is about.
 
 ### **Modal** ###
-The modal provides the user with the different game buttons. Depending on what game they chose to play the corresponding game will load. Modal also give the user an explanation as to what each quiz does.
+The modal provides the user with the different game buttons. Depending on what game they chose to play the corresponding game will load. Modal also give the user an explanation as to what each quiz does. User can also input a desired playing name here too.
+
+![screen shot of Modal](assets/images/modal-ss.png)
+
+- buttons will turn yellow and curser will change to a pointer. This will show the user that the buttons are clickable.
+- modal will display in the centre and will cause the behind background to change transparancy so that the users attention will be drawn to the modal.
+- text input area gives the oppotunity to pick a desired name for them to play as. Harry Potter is put in there by default in case the user forgets to put a name.
+- if user puts nothing in the input then a name will be saved for them (player 1), this will stop any delay to the game in case the user just wants to play the quiz and not bothered about saving a name.
+- information is given to the user at this point so that they decide what game type they would like to play.
+
+![screen shot of buttons turning yellow](assets/images/button-ss.png)
+
+
+
+
+
 
 
 
