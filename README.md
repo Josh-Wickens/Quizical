@@ -4,6 +4,8 @@ ___
 
 Quizical is the perfect place to test your Harry Potter knowledge. If it's just a case of testing your knowledge trying questions or if you want to put your knowledge to the test and try to answer as many questions right in 1 minute. Most quizzes will give you a certain amount of questions and give you a score out of the number of questions, whereas this quiz will give you the opportunity to try and get the highscore and see if your friends can beat your score. The quiz is for all ages and all knowledge levels. The questions range from easy to hard, so you should be able to really test how much you know. 
 
+![am i responsive screenshot](assets/images/amiresponsive.png)
+
 ___
 ## **Motivation** ##
 I am a Harry Potter fan and I would love to see how much I really know. This website would have given me that opportunity to test my knowledge. I would like a quiz game which you could play with your friends. So in my head I thought a quiz which you could pass around and see who could get the best score sounded perfect. 
@@ -139,32 +141,28 @@ I used a couple of tutorials to help me with the basics of making a quiz.
 
 I used fisher-yates algorithm to shuffle the questions. I looked for a way which you could shuffle as if using a deck of cards. Found a few videos that explained the algorythim and deployed it to use to shuffle my questions into a random order
 
-[All Things Javascript - Youtube](https://www.youtube.com/watch?v=myL4xmtAVtw)
+[All Things Javascript - Youtube](https://www.youtube.com/watch?v=myL4xmtAVtw)<br>
+[Adam Khoury - Yotube](https://www.youtube.com/watch?v=tLxBwSL3lPQ)<br>
 [Quizical](https://josh-wickens.github.io/Quizical/)
-[Quizical](https://josh-wickens.github.io/Quizical/)
 
+For the leader board I used the following videos and article and some help from tutor support to get my scores into the leaderboard
 
+[Dennis Ivy - Youtube](https://www.youtube.com/watch?v=XmdOZ5NSqb8)<br>
+[James Q Quick - Yotube](https://www.youtube.com/watch?v=DFhmNLKwwGw)<br>
+[exploringjs](https://exploringjs.com/es6/ch_template-literals.html)
 
+For building a Modal pop up I got help from the following tutorial and article
 
+[web dev simplified - Youtube](https://www.youtube.com/watch?v=MBaw_6cPmAw&t=1s)
 
+The rest of the help goes to everyone on slack and the tutor support.
 
+### **Fonts** ###
 
+I used google fonts for selecting my fonts. 
+- [fonts.google.com](https://fonts.google.com/)
 
+### **Icons** ###
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
+I used fontawesome for my social media icons.
+- [fontawesome.com/icons](https://fontawesome.com/icons)
