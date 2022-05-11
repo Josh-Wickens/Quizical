@@ -63,6 +63,22 @@ At the end of the quiz, the users score for that game will be displayed, along w
 - a clear score button is provided so if the user wants to clear all previous highscores they can and start adding new scores to the table.
 
 ![screen shot top of results page with try again and recent score](assets/images/highscores-ss.png)
+___
+
+### **Images** ###
+
+The images used in the quiz have been Harry Potter or magic related. I got my images from - [pexels.com](https://www.pexels.com/)
+___
+
+## **Features For Future** ##
+___
+- a larger leaderboard which will display scores from online so that you can try and beat people from all over the world.
+- a live 2 player game where you can play at the same time and see who can get a better score whilst seeing what your opponant is on.
+- a choice of quiz topics.
+- video clips from the movie where users can answer questions like 'what does Harry say next?'
+
+
+
 
 
 
