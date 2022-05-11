@@ -91,10 +91,57 @@ I created media queries so that no matter the width size, with that being a phon
 ### **Validators** ###
 - Validator passed for html w3c validator - no errors
 - Validator passed for css official (jigsaw) validator - no errors
-- Validator passed for javascript validater (jshint) - no errors
+- Validator passed for javascript validater (jshint) - no errors 
+(There are 30 functions in this file. Function with the largest signature take 2 arguments, while the median is 0. Largest function has 10 statements in it, while the median is 2. The most complex function has a cyclomatic complexity value of 3 while the median is 1.)
 ___
 
 ## **Bugs** ##
+
+- buttons on mobile devices were not changin back to their initial background colour after being pressed on a mobile. I used [medium article](https://medium.com/@mezoistvan/finally-a-css-only-solution-to-hover-on-touchscreens-c498af39c31c) to help remove the hover effect when on a mobile device.
+- button text colour was coming out blue instead of black on a mobile device. Changed the text colour for the class to black to fix.
+- had a bug on the modal. I set an event listener to the game mode buttons to start the timer if the timed game button was selected. But I also had a required element on the input box and buttons were set to disable until a name was inserted. But the if they clicked the timed game button when it was disabled, it would still start the timer and not close the modal. So i set a default name for the input if a name wasn't selected and got rid of the disabled buttons.
+- questions were displaying to fast for the correct and wrong answer css. The container would display red for incorrect and green for correct. But the question was changing to the next one before it would finish. So i set a animation function with a timedelay to the change question function to give it time to finish it's animation.
+
+___
+
+## **Deployment** ##
+
+I deployed the website using GitHub. Steps taken:
+1. Go on to the GitHub website.
+2. Go on to the settings tab of the depository 
+3. Select pages on the section tab.
+4. Select the main branch.
+5. Save.
+6. Link to website is then provided.
+
+Here is the link to [Quizical](https://josh-wickens.github.io/Quizical/)
+
+When adding code, in the terminal commit all changes using 
+
+1. git add .
+2. git commit -m "insert change here"
+3. git push to save it to github
+
+___
+
+## **Credits** ##
+___
+
+### **Code** ###
+
+I used a couple of tutorials to help me with the basics of making a quiz. 
+
+[Code Explained](https://www.codeexplained.dev/2018/10/create-multiple-choice-quiz-using-javascript.html)
+[Brian Design - Youtube](https://www.youtube.com/watch?v=f4fB9Xg2JEY)
+[Web Dev Simplified - Youtube](https://www.youtube.com/watch?v=riDzcEQbX6k)
+[code Explained](https://www.youtube.com/watch?v=49pYIMygIcU)
+[Quizical](https://josh-wickens.github.io/Quizical/)
+
+I used fisher-yates algorithm to shuffle the questions. I looked for a way which you could shuffle as if using a deck of cards. Found a few videos that explained the algorythim and deployed it to use to shuffle my questions into a random order
+
+[All Things Javascript - Youtube](https://www.youtube.com/watch?v=myL4xmtAVtw)
+[Quizical](https://josh-wickens.github.io/Quizical/)
+[Quizical](https://josh-wickens.github.io/Quizical/)
 
 
 

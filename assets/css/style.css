@@ -118,7 +118,7 @@ i {
     border-radius: 50%;
     height: 190px;
     width: 300px;
-    background: url(/assets/images/stars-background-webp.webp) no-repeat;
+    background: url(../images/stars-background.png) no-repeat;
     background-size: 100%;
     justify-content: center;
     align-items: center;
