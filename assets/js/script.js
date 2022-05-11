@@ -40,9 +40,7 @@ let scoreCard = document.getElementById("score-area");
 let optionA = document.getElementById("answer-a");
 let optionB = document.getElementById("answer-b");
 let optionC = document.getElementById("answer-c");
-let scoreText = document.getElementById("score");
 const highscoresTable = document.getElementById("highscores");
-const startBtn = document.getElementById("begin");
 let currentQuestion = 0;
 let score = 0;
 const maxQuestions = 10;
@@ -85,8 +83,7 @@ const aniTiming = {
 
 /* Timer Variables */
 
-const questionTime = 0;
-let clockContainer = document.getElementById("clock-contain");
+
 let clock = document.getElementById("timer-clock");
 let count = 60;
 
@@ -116,14 +113,14 @@ function quizLoaded() {
 
 }
 
-userName.addEventListener("click", clearFields)
+userName.addEventListener("click", clearFields);
 
 function clearFields() {
 
     userName.value = "";
 
 
-};
+}
 
 
 /* Modal event listeners to open and close using querySelectors on the buttons.*/
@@ -132,14 +129,14 @@ openModalBtn.forEach(button => {
     button.addEventListener('click', () => {
         const modal = document.querySelector(button.dataset.modalTarget);
         openModal(modal);
-    })
-})
+    });
+});
 
 closeModalBtn.forEach(button => {
     button.addEventListener('click', () => {
-        const modal = button.closest(".modal")
+        const modal = button.closest(".modal");
         closeModal(modal);
-    })
+    });
 });
 
 /* Modal Function */
@@ -163,22 +160,27 @@ function closeModal() {
         nContainer.style.display = "none";
         qContainer.style.display = "block";
     }
-};
+    modal.classList.remove('active');
+    overlay.classList.remove('active');
+
+    nContainer.style.display = "none";
+    qContainer.style.display = "block";
+}
 
 let quizTimer;
 let startNormal = document.getElementById("submit-normal");
-let timedGame = document.getElementById('submit-timed')
+let timedGame = document.getElementById('submit-timed');
 let startAgainButton = document.getElementById("start-again");
 startAgainButton.addEventListener('click', startAgain);
 startNormal.addEventListener('click', function () {
 
-    startQuiz('normal')
-    usernameInput = document.getElementById('name').value
+    startQuiz('normal');
+    usernameInput = document.getElementById('name').value;
 }, false);
 timedGame.addEventListener('click', function () {
 
-    startQuiz('timed')
-    usernameInput = document.getElementById('name').value
+    startQuiz('timed');
+    usernameInput = document.getElementById('name').value;
 }, false);
 
 /* Start quiz function and running the quiz on gametype */
@@ -195,7 +197,6 @@ function startQuiz(type) {
                 if (button.dataset.answer === questions[currentQuestion].answer) {
                     /* increase score by 1 if the user clicks the correct answer */
                     score++;
-                    console.log("score is", score)
                     correct();
                 } else {
                     incorrect();
@@ -214,7 +215,7 @@ function startQuiz(type) {
                     endGame();
                 }
             })
-        ))
+        ));
     } else {
         gameBtns.forEach((button =>
             button.addEventListener('click', function (e) {
@@ -233,7 +234,7 @@ function startQuiz(type) {
 
 
             })
-        ))
+        ));
 
         timer();
 
@@ -267,14 +268,12 @@ function startAgain() {
 /* function if the user selects the right or wrong answer */
 
 function correct() {
-    console.log("correct function")
     questionsContainer.animate(correctAniStart, aniTiming);
 
 
 }
 
 function incorrect() {
-    console.log("incorrect function");
     questionsContainer.animate(incorrectAniStart, aniTiming);
 
 
@@ -298,8 +297,6 @@ function endGame() {
 
 function showResults() {
 
-
-    console.log("score should be revealed")
     scoreCard.style.display = "flex";
     document.getElementById('score').innerText = `${usernameInput} scored:  ${score} `;
     startAgainButton.innerText = "TRY AGAIN?";
@@ -331,24 +328,7 @@ function saveHighScore() {
         highScoresList.innerHTML += `<tr><td>${highScores[score].name}</td><td>${highScores[score].score}</td></tr>`;
     }
 
-
-    // highScoresList.innerHTML = highScores.map(score => {
-    /*return `<tr><td>${score.name}</td><td>${score.score}</td></tr>`;*/
-
-
-
-    // })
-
-    // const league = highScores.map(score => {
-    // for (let score = 0; score < highScores.length; score++) {
-    //     highScoresList.innerHTML += `<tr><td>${highScores[score].name}</td><td>${highScores[score].score}</td></tr>`;
-    // }
-    /*return `<ul><li>${score.name}${score.score}</li></ul>`;*/
-
-    // })
-    // .join('');
-
-};
+}
 
 
 
@@ -385,5 +365,5 @@ function timer() {
             clearInterval(quizTimer);
             endGame();
         }
-    }, 1000)
+    }, 1000);
 }
